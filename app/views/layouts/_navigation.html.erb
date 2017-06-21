@@ -10,6 +10,7 @@
 	                    </button>
 				<% if user_signed_in? %>
 				  <%= link_to "Home", user_path(current_user), :class => "navbar-brand"%>
+				  <%= link_to "Edit", edit_user_path(current_user), :class => "navbar-brand"%>
 				  <%= link_to "Sign out", destroy_user_session_path, method: :delete , :class => "navbar-brand"%>
 				<% else %>
 				  <%= link_to "Sign in", new_user_session_path, :class => "navbar-brand"%>

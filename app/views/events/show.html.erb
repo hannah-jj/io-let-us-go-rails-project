@@ -1,0 +1,7 @@
+<h1><%= @event.title %></h1>
+
+	<%= link_to "Edit", edit_event_path(@event) %>
+
+<p><%= @event.note %></p>
+<p>created by: <%= @event.organizer.name ? @event.organizer.name : @event.organizer.email%></p>
+

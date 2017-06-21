@@ -1,0 +1,15 @@
+<%= form_for(@event) do |f| %>
+
+  <div class="field"> <%= f.label :title %><br>
+  <%= f.text_field :title %></div>
+
+  <div class="field"> <%= f.hidden_field :organizer_id, :value=>current_user.id %></div>
+
+    <div class="field"> <%= f.label :note %><br>
+  <%= f.text_field :note %></div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
