@@ -1,0 +1,9 @@
+<div class="col-lg-6">
+	<div class="well bs-component">
+			<fieldset>
+				<legend> Edit Comment: <%=@event.title.capitalize%></legend>
+					<%= render partial: 'comments/form', locals: {event: @event, comment: @comment } %>
+			</fieldset>
+
+	</div>
+</div>

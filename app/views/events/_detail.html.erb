@@ -3,7 +3,6 @@
 		<h3 class="panel-title"><strong>Title: </strong><%= link_to event.title, event_path(event) %></h3>
 	</div>
 	<div class="panel-body">
-		<p><strong>Time:</strong> <%= event.event_time.to_time.strftime('%B %e, %Y at %l:%M %p') %></p>
+		<p><strong>Time:</strong> <%= event.event_day.to_time.strftime('%B %e, %Y') %></p>
 		<p><strong>Organized by:</strong> <%= event.organizer.name ? event.organizer.name : event.organizer.email%></p>
-
 	</div>

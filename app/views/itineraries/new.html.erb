@@ -1,0 +1,10 @@
+<div class="col-lg-6">
+	<div class="well bs-component">
+
+			<fieldset>
+				<legend> Add Itinerary to: <%=@event.title%></legend>
+					<%= render partial: 'itineraries/form', locals: {itinerary: @itinerary, event: @event } %>
+			</fieldset>
+
+	</div>
+</div>

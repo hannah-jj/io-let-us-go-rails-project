@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   has_many :participants, through: :event_users, :class_name => "User"
   
   has_many :comments
-  has_many :expenses
+  has_many :itinerary
 
-  validates_presence_of :title, :location, :event_time
+  validates_presence_of :title, :location, :event_day
 end

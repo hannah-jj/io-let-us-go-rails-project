@@ -1,8 +1,14 @@
-<% comments.each do |comment| %>
-	<p><%= comment.note %> @ <%= comment.user.email %>
-		<% if comment.user = current_user %>
-			<%= link_to "Edit", edit_comment_path(comment) %>
-			<%= button_to "Delete", comment, :method => "delete" %>
-		<% end %>
-	</p>
-<% end %>
+
+<tr class="info">
+	<td><%= comment.note %> @ <%= comment.user.email %></td>
+	<% if comment.user == current_user %>
+		<td><%= button_to "Edit", edit_comment_path(comment), :method => "get" %></td>
+
+		<td><%= button_to "Delete", comment, :method => "delete" %></td>
+	<% else %>
+	<!-- to force the format of each row to be the same -->
+		<td></td>
+		<td></td>
+
+	<% end %>
+</tr>

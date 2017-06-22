@@ -1,0 +1,13 @@
+<p><%= link_to "Back To The Event ", event_path(@event) %>|
+	<%= link_to " Add Comment", new_event_comment_path(@event, @comment) %>
+</p>
+
+<legend>Event: <%= @event.title %></legend>
+<table class="table table-striped table-hover">
+	<tbody>
+<% @comments.each do |comment| %>
+	<%= render partial: 'show', locals: {comment: comment } %>
+<% end %>
+	</tbody>
+</table>
+

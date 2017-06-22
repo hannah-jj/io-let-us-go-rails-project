@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.new(event_params)
+		
 		if @event.save
 			redirect_to event_path(@event), notice: "Event successfully created"
 		else
@@ -58,7 +59,7 @@ class EventsController < ApplicationController
         :note,
         :organizer_id,
         :location,
-        :event_time
+        :event_day
       )
     end
 end

@@ -1,9 +1,16 @@
-<%= form_for(comment) do |f| %>
-      <div class="field"> <%= f.hidden_field :user_id, :value=>current_user.id %></div>
-      <div class="field"> <%= f.hidden_field :event_id, :value=>event.id %></div>
 
-      <div class="field"> <%= f.label :note %><br>
-      <%= f.text_area :note %></div>
+<%= form_for(comment) do |f| %>
+      <div class="form-group"> 
+      	<%= f.hidden_field :user_id, :value=>current_user.id %>
+      </div>
+      <div class="form-group"> 
+      	<%= f.hidden_field :event_id, :value=>event.id %>
+      </div>
+
+      <div class="form-group"> 
+      	<%= f.label :note, :class=>"col-lg-2 control-label"%>
+      	<%= f.text_area :note, :class=>"form-control" %>
+      </div>
 
       <div class="actions">
         <%= f.submit %>

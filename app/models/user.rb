@@ -5,11 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :meetings, :class_name => 'Event', :foreign_key => 'organizer_id'
+  has_many :itineraries, through: :meetings
 
   has_many :event_users, :class_name => 'Event_User', :foreign_key => 'participant_id'
 
   has_many :comments
 
-  has_many :expenses
+  
   
 end
