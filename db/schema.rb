@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621141408) do
+ActiveRecord::Schema.define(version: 20170621164151) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "event_id"
     t.integer "user_id"
     t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_users", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "participant_id"
+    t.string "going"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,14 +53,6 @@ ActiveRecord::Schema.define(version: 20170621141408) do
     t.string "note"
     t.string "location"
     t.datetime "fun_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "participants", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "user_id"
-    t.string "going"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

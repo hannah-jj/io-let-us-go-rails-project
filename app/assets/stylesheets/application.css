@@ -3071,6 +3071,14 @@
    -webkit-box-shadow: none;
    box-shadow: none;
  }
+ .btn.faded,
+ .btn[faded],
+ fieldset[faded] .btn {
+   opacity: 0.65;
+   filter: alpha(opacity=65);
+   -webkit-box-shadow: none;
+   box-shadow: none;
+ }
  a.btn.disabled,
  fieldset[disabled] a.btn {
    pointer-events: none;

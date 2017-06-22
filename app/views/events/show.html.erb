@@ -1,7 +1,24 @@
-<h1><%= @event.title %></h1>
 
-	<%= link_to "Edit", edit_event_path(@event) %>
-
-<p><%= @event.note %></p>
-<p>created by: <%= @event.organizer.name ? @event.organizer.name : @event.organizer.email%></p>
+<div class="bs-component">
+    <div class="jumbotron">
+        <h1><%= @event.title %></h1>
+        <div class="bs-component">
+        	<ul class="nav nav-pills">
+                <% (0..2).each do |i| %>
+                    <li class="btn btn-warning btn-xs <%= 'faded' if @stats[3][:status] != @stats[i][:status] %>" >
+                        <%= form_for @event_user do |f| %>
+                        <%= f.hidden_field :event_id, :value =>@event.id %>
+                        <%= f.hidden_field :going, :value => @stats[i][:status] %>
+                        <%= f.submit @stats[i][:status], :method => "POST", :class => "btn btn-warning" %>
+                        <span class="badge"><%= @stats[i][:value]%></span>
+                        <% end %>
+                    </li>                  
+                <% end %>
+        	</ul>
+        </div>
+        <p><strong>Organized by:</strong> <%= @event.organizer.name ? @event.organizer.name : @event.organizer.email%></p>
+		<p><strong>Details:</strong> <%= @event.note %></p>
+        <p><%= link_to "Edit This Event", edit_event_path(@event) %>
+  	</div>
+ </div>
 

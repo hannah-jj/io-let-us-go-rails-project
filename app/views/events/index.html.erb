@@ -1,2 +1,15 @@
-<h1> Events</h1>
-<p><%= link_to "Add Event", new_event_path%></p>
+<div class="bs-component">
+    <div class="jumbotron">
+        <h1>Events: </h1>
+        <p>Here are all the events.  Have fun!</p>
+   	</div>
+</div>    
+
+<div class="bs-component">
+    <div class="panel panel-default">
+	    <% @events.each do |event| %>
+	    	<%= render partial: 'detail', locals: {event: event} %>
+	    <% end %>
+	</div>
+</div>
+

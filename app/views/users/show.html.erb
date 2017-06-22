@@ -1,1 +1,18 @@
-show.html.erb
+<div class="bs-component">
+    <div class="jumbotron">
+        <h1>Hello <%= @user.name%></h1>
+        <p>Here are your events.  Have fun!</p>
+   	</div>
+</div>    
+        
+        <% if !@user.events.count %>
+        	<p> You haven't organized any events yet.</p>
+        	<p><%= link_to "Organize an Event", new_event_path, :class=>"btn btn-warning btn-lg"%></p>
+
+        <% else %>
+            <p><strong> As An Organizer:</strong></p>
+	        <% @user.events.each do |event| %>
+	        	<%= render partial: 'events/detail', locals: {event: event} %>
+	        <% end %>
+
+	    <% end %>

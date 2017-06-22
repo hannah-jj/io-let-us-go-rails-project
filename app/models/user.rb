@@ -6,11 +6,13 @@ class User < ApplicationRecord
 
   has_many :events, :foreign_key => 'organizer_id'
 
-  has_many :participants
-  has_many :events, through: :participants
+  has_many :event_users, :foreign_key => 'participant_id'
+  has_many :meetings, :class_name => 'Event', through: :event_users
+  
   
 
   has_many :itinearies
+
   has_many :comments
 
   has_many :expenses
