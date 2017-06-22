@@ -1,0 +1,8 @@
+<% comments.each do |comment| %>
+	<p><%= comment.note %> @ <%= comment.user.email %>
+		<% if comment.user = current_user %>
+			<%= link_to "Edit", edit_comment_path(comment) %>
+			<%= button_to "Delete", comment, :method => "delete" %>
+		<% end %>
+	</p>
+<% end %>

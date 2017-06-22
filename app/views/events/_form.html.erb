@@ -1,12 +1,25 @@
+<% if !@event.valid? %>
+  <div class="alert-danger"><%= @event.errors.messages %></div>
+<% end %>
+
+
 <%= form_for(@event) do |f| %>
 
   <div class="field"> <%= f.label :title %><br>
   <%= f.text_field :title %></div>
 
+    <div class="field"> <%= f.label :location %><br>
+  <%= f.text_field :location %></div>
+
+    <div class="field"> <%= f.label :event_time %><br>
+  <%= f.date_select :event_time %></div>
+
   <div class="field"> <%= f.hidden_field :organizer_id, :value=>current_user.id %></div>
 
-    <div class="field"> <%= f.label :note %><br>
+  <div class="field"> <%= f.label :note %><br>
   <%= f.text_area :note %></div>
+
+
 
   <div class="actions">
     <%= f.submit %>

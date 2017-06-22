@@ -8,7 +8,9 @@
 <div class="bs-component">
     <div class="panel panel-default">
 	    <% @events.each do |event| %>
-	    	<%= render partial: 'detail', locals: {event: event} %>
+	    	<div class="panel-warning">
+	    		<%= render partial: 'detail', locals: {event: event} %>
+	    	</div>
 	    <% end %>
 	</div>
 </div>

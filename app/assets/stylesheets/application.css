@@ -5115,6 +5115,8 @@
  .alert-warning .alert-link {
    color: #a47e3c;
  }
+ .field_with_errors { display: inline; }
+ 
  .alert-danger {
    background-color: #f2dede;
    border-color: #eed3d7;

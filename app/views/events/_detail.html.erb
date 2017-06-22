@@ -1,10 +1,9 @@
-<div class="panel-warning">
+
 	<div class="panel-heading">
 		<h3 class="panel-title"><strong>Title: </strong><%= link_to event.title, event_path(event) %></h3>
 	</div>
 	<div class="panel-body">
-		
+		<p><strong>Time:</strong> <%= event.event_time.to_time.strftime('%B %e, %Y at %l:%M %p') %></p>
 		<p><strong>Organized by:</strong> <%= event.organizer.name ? event.organizer.name : event.organizer.email%></p>
-		<p><strong>Details:</strong> <%= event.note %></p>
+
 	</div>
-</div>

@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
     	!!current_user
   	end
 
+  	def user_only
+		if !logged_in?
+			redirect_to home_path, alert: 'Access Denied'
+		end
+	end
+
 end

@@ -1,8 +1,8 @@
 
+<!-- Event Information -->
 <div class="bs-component">
     <div class="jumbotron">
         <h1><%= @event.title %></h1>
-        <div class="bs-component">
         	<ul class="nav nav-pills">
                 <% (0..2).each do |i| %>
                     <li class="btn btn-warning btn-xs <%= 'faded' if @stats[3][:status] != @stats[i][:status] %>" >
@@ -15,10 +15,28 @@
                     </li>                  
                 <% end %>
         	</ul>
-        </div>
         <p><strong>Organized by:</strong> <%= @event.organizer.name ? @event.organizer.name : @event.organizer.email%></p>
-		<p><strong>Details:</strong> <%= @event.note %></p>
-        <p><%= link_to "Edit This Event", edit_event_path(@event) %>
+        <p><strong>Location:</strong> <%= @event.location %></p>
+        <p><strong>Time:</strong> <%= @event.event_time.to_time.strftime('%B %e, %Y at %l:%M %p') %></p>
+        <p><strong>Details:</strong> <%= @event.note %></p>
+        <% if current_user && current_user == @event.organizer %>
+            <p><%= link_to "Edit This Event", edit_event_path(@event) %>
+        <% end %>
   	</div>
  </div>
 
+<!-- Comments from users -->
+<div class="bs-component">
+    <div class="jumbotron">
+        <h1>Comments: </h1>
+        <% if current_user %>
+            <%= render partial: 'comments/form', locals: {event: @event, comment: @comment } %>
+        <% end %>
+
+        <% if @comments.nil? %>
+            <p> No comments yet. </p>
+        <% else %>
+            <%= render partial: 'comments/show', locals: {comments: @comments }%>
+        <% end %>
+    </div>
+</div>

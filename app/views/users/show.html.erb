@@ -1,18 +1,42 @@
 <div class="bs-component">
     <div class="jumbotron">
-        <h1>Hello <%= @user.name%></h1>
-        <p>Here are your events.  Have fun!</p>
+        <h1>Hello <%= current_user.name%></h1>
+        <p>Here are <%= current_user == @user ? "your" : "#{@user.email}'s" %> events.  Have fun!</p>
    	</div>
 </div>    
-        
-        <% if !@user.events.count %>
-        	<p> You haven't organized any events yet.</p>
+
+<div class="bs-component">
+    <div class="jumbotron">  
+        <% if @user.meetings.count == 0 %>
+        	<p><strong><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  organized any events yet.</strong></p>
         	<p><%= link_to "Organize an Event", new_event_path, :class=>"btn btn-warning btn-lg"%></p>
 
         <% else %>
             <p><strong> As An Organizer:</strong></p>
-	        <% @user.events.each do |event| %>
-	        	<%= render partial: 'events/detail', locals: {event: event} %>
-	        <% end %>
+            <% @user.meetings.each do |meeting| %>
+                <div class="panel-warning">
+                	<%= render partial: 'events/detail', locals: {event: meeting} %>
+                </div>
+            <% end %>
 
-	    <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="bs-component">
+    <div class="jumbotron">  
+
+        <p><strong> Events that <%= current_user == @user ? "you have" : "#{@user.email} has" %> noted participation:</strong></p>
+        <% @user.event_users.each do |i| %>
+            <div class="panel-warning">
+                <%= render partial: 'events/detail', locals: {event: i.event} %>
+                <div>
+                    <p><strong>&nbsp;&nbsp;&nbsp;Going? </strong><%= i.going %></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+            
+
+	    
