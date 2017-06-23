@@ -37,6 +37,38 @@
     </div>
   </div>
 
+<!-- add itineraries -->
+ 
+  <%= f.fields_for :itineraries do |itin| %>
+   <legend> Add an Itinerary </legend>
+
+   <div class="form-group">
+ 
+    <%= itin.hidden_field :event_id, :value => @event.id, :class=>"form-control"%>
+    </div>
+
+    <div class="form-group">
+    <%= itin.label :note, :class=>"col-lg-2 control-label"  %>
+      <div class="col-lg-10">
+      <%= itin.text_field :note, :class=>"form-control"  %><br>
+      </div>
+    </div>
+    
+    <div class="form-group">
+    <%= itin.label :location, :class=>"col-lg-2 control-label" %>
+      <div class="col-lg-10">
+      <%= itin.text_field :location, :class=>"form-control"  %><br>
+      </div>
+    </div>
+
+    <div class="form-group">
+    <%= itin.label :meet_time, :class=>"col-lg-2 control-label"  %>
+      <div class="col-lg-10">
+      <%= itin.time_select :meet_time, :class=>"form-control"  %><br>
+      </div>
+    </div>
+
+  <% end %>
 
   <div class="actions">
     <%= f.submit%>

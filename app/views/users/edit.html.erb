@@ -1,3 +1,7 @@
+<% if !@user.valid? %>
+  <div class="alert-danger"><%= @user.errors.messages %></div>
+<% end %>
+
 <%= form_for(@user) do |f| %>
 
   <div class="field"> <%= f.label :name %><br>

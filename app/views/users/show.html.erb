@@ -6,13 +6,13 @@
 </div>    
 
 <div class="bs-component">
-    <div class="jumbotron">  
+    <div class="page-header">
         <% if @user.meetings.count == 0 %>
         	<p><strong><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  organized any events yet.</strong></p>
         	<p><%= link_to "Organize an Event", new_event_path, :class=>"btn btn-warning btn-lg"%></p>
 
         <% else %>
-            <p><strong> As An Organizer:</strong></p>
+            <h1 id="typography"> As An Organizer:</h1>
             <% @user.meetings.each do |meeting| %>
                 <div class="panel-warning">
                 	<%= render partial: 'events/detail', locals: {event: meeting} %>
@@ -24,9 +24,8 @@
 </div>
 
 <div class="bs-component">
-    <div class="jumbotron">  
 
-        <p><strong> Events that <%= current_user == @user ? "you have" : "#{@user.email} has" %> noted participation:</strong></p>
+        <h1 id="typography"> Events that <%= current_user == @user ? "you have" : "#{@user.email} has" %> noted participation:</h1>
         <% @user.event_users.each do |i| %>
             <div class="panel-warning">
                 <%= render partial: 'events/detail', locals: {event: i.event} %>
@@ -35,7 +34,7 @@
                 </div>
             </div>
         <% end %>
-    </div>
+
 </div>
             
 

@@ -1,0 +1,11 @@
+
+<tr class="info">
+	<td><%= itinerary.note%></td>
+	<td><%= button_to "View", itinerary_path(itinerary), :method => "get" %></td>
+
+	
+	<td><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %></td>
+
+	<td><%= button_to "Delete", itinerary, :method => "delete" %></td>
+
+</tr>

@@ -1,6 +1,7 @@
 
 <tr class="info">
 	<td><%= comment.note %> @ <%= comment.user.email %></td>
+	<td><%= button_to "View", comment_path(comment), :method => "get" %></td>
 	<% if comment.user == current_user %>
 		<td><%= button_to "Edit", edit_comment_path(comment), :method => "get" %></td>
 

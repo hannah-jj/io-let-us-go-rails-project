@@ -18,10 +18,15 @@ class EventsController < ApplicationController
 		@comments = @event.comments
 		@comment = Comment.new
 
+		#to display itineraries
+		@itineraries = @event.itineraries
+
 	end
 
 	def new
 		@event = Event.new
+		@event.itineraries.build
+		@event.itineraries.build
 	end
 
 	def create
@@ -59,7 +64,13 @@ class EventsController < ApplicationController
         :note,
         :organizer_id,
         :location,
-        :event_day
+        :event_day,
+        :itineraries_attributes => [
+        	:id,
+        	:note,
+        	:location,
+        	:meet_time,
+        ]
       )
     end
 end
