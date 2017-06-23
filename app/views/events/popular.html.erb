@@ -1,0 +1,23 @@
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Event Title</th>
+			<th>Going</th>
+			<th>Maybe</th>
+			<th>No</th>
+		<tr>
+	</thead>
+	<tbody>
+		<% @results.each_with_index do |result, i| %>
+			<% @e = Event.find(result[:event_id]) %>
+		<tr class="info">
+			<th><%= i + 1 %></th>
+			<th><%= link_to @e.title, event_path(@e) %></th>
+			<th><span class="badge"><%= result[:stats][0][:value]%></span></th>
+			<th><span class="badge"><%= result[:stats][1][:value]%></span></th>
+			<th><span class="badge"><%= result[:stats][2][:value]%></span></th>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

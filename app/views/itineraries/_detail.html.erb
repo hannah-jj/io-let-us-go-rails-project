@@ -5,8 +5,9 @@
 	<p><strong>location: </strong><%= itinerary.location%></p>
 	<p><strong>time: </strong><%= itinerary.meet_time.to_time.strftime('%H:%M') %></p>
 	
-	<%= button_to "Delete", itinerary, :method => "delete" %>
-	<%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %>
+	<p><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %></p>
+
+	<p><%= button_to "Delete", itinerary, :method => "delete" %></p>
 	
 	</blockquote>
 	</div>

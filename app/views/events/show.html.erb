@@ -3,6 +3,7 @@
 <div class="bs-component">
     <div class="page-header">
         <h1><%= @event.title.capitalize %></h1>
+        <!-- showing stats of participants -->
         	<ul class="nav nav-pills">
                 <% (0..2).each do |i| %>
                     <li class="btn btn-warning btn-xs <%= 'faded' if @stats[3][:status] != @stats[i][:status] %>" >

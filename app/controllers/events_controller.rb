@@ -47,6 +47,10 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def popular
+		@results = Event.top_popular
+	end
+
 	private
 	def set_event
 		@event = Event.find(params[:id])
