@@ -73,6 +73,7 @@ class CommentsController < ApplicationController
 	def set_comment
 		@comment = Comment.find(params[:id])
 	end
+	
 	def comment_params
 	      params.require(:comment).permit(
 	    :event_id,
