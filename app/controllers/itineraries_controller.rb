@@ -1,7 +1,8 @@
 class ItinerariesController < ApplicationController
 	before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
-
+	before_action :user_only, only: [:edit, :new, :update, :create, :destroy]
 	def index
+		
 		if params[:event_id]
 			@event = Event.find_by(id: params[:event_id])
 			if @event == nil

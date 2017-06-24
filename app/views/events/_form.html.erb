@@ -15,18 +15,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :location, :class=>"col-lg-2 control-label" %>
-    <div class="col-lg-10">
-      <%= f.text_field :location, :class=>"form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :event_day, :class=>"col-lg-2 control-label" %>
-    <div class="col-lg-10">
-      <%= f.date_select :event_day, :class=>"form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
     <%= f.hidden_field :organizer_id, :value=>current_user.id %>
   </div>
 
@@ -64,7 +52,7 @@
     <div class="form-group">
     <%= itin.label :meet_time, :class=>"col-lg-2 control-label"  %>
       <div class="col-lg-10">
-      <%= itin.time_select :meet_time, :class=>"form-control"  %><br>
+      <%= itin.datetime_select :meet_time, :class=>"form-control"  %><br>
       </div>
     </div>
 

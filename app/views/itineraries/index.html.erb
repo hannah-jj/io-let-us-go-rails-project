@@ -4,10 +4,7 @@
 
 <legend>Event: <%= @event.title %></legend>
 <h4> Itineraries </h4>
-<table class="table table-striped table-hover">
-	<tbody>
-		<% @itineraries.each do |itinerary| %>
-			<%= render partial: 'detail', locals: {itinerary: itinerary } %>
-		<% end %>
-	</tbody>
-</table>
+
+<% @itineraries.each do |itinerary| %>
+	<%= render partial: 'detail', locals: {itinerary: itinerary } %>
+<% end %>

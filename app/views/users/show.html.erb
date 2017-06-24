@@ -8,7 +8,7 @@
 <div class="bs-component">
     <div class="page-header">
         <% if @user.meetings.count == 0 %>
-        	<p><strong><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  organized any events yet.</strong></p>
+        	<h1 id="typography"><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  organized any events yet.</h1>
         	<p><%= link_to "Organize an Event", new_event_path, :class=>"btn btn-warning btn-lg"%></p>
 
         <% else %>
@@ -18,13 +18,15 @@
                 	<%= render partial: 'events/detail', locals: {event: meeting} %>
                 </div>
             <% end %>
-
         <% end %>
     </div>
 </div>
 
 <div class="bs-component">
-
+    <% if @user.event_users.count == 0 %>
+        <h1 id="typography"><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  noted participation in any events yet.</h1>
+            <p><%= link_to "Check Out the most popular events", popular_events_path, :class=>"btn btn-warning btn-lg"%></p>
+    <% else %>
         <h1 id="typography"> Events that <%= current_user == @user ? "you have" : "#{@user.email} has" %> noted participation:</h1>
         <% @user.event_users.each do |i| %>
             <div class="panel-warning">
@@ -34,6 +36,7 @@
                 </div>
             </div>
         <% end %>
+    <% end %>
 
 </div>
             

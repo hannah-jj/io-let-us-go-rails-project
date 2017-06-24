@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
+	def no_access
+		redirect_to home_path, alert: 'Access Denied'
+	end
+
+	def after_sign_in_path_for(resource)
+    	request.env['omniauth.origin'] || home_path
+	end
+
 end

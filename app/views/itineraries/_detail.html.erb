@@ -1,13 +1,15 @@
+<!-- shows detail of each itineraries -->
 <div class="bs-component">
 	<div class="well well-sm">
 	<blockquote>
-	<p><strong>note: </strong><%= itinerary.note%></p>
+	<p><strong>note: </strong><%= link_to itinerary.note, itinerary_path(itinerary)%></p>
 	<p><strong>location: </strong><%= itinerary.location%></p>
-	<p><strong>time: </strong><%= itinerary.meet_time.to_time.strftime('%H:%M') %></p>
+ 	<p><strong>time: </strong><%= itinerary.meet_time.to_time.strftime('%m/%d/%Y at %I:%M%p') %></p>
 	
-	<p><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %></p>
+	<%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %>
 
-	<p><%= button_to "Delete", itinerary, :method => "delete" %></p>
+
+	<%= button_to "Delete", itinerary, :method => "delete" %>
 	
 	</blockquote>
 	</div>

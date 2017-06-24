@@ -17,8 +17,7 @@
                 <% end %>
         	</ul>
         <p><strong>Organized by:</strong> <%= @event.organizer.name ? @event.organizer.name : @event.organizer.email%></p>
-        <p><strong>Location:</strong> <%= @event.location %></p>
-        <p><strong>Time:</strong> <%= @event.event_day.to_time.strftime('%B %e, %Y') %></p>
+       
         <p><strong>Details:</strong> <%= @event.note %></p>
 
 <!-- Event Update & Itinerary -->

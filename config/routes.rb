@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   root 'main#index', as: 'home'
-  devise_for :users
-  
-  resources :users, only: [:show, :edit, :update] 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # resources :events do
-  # 	resources :comments, only: [:show, :index, :edit, :new]
-  # end
+  resources :users, only: [:show, :create, :edit, :update] 
+
 
   resources :event_users
 

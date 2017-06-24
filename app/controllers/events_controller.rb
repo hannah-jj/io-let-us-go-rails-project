@@ -26,7 +26,6 @@ class EventsController < ApplicationController
 	def new
 		@event = Event.new
 		@event.itineraries.build
-		@event.itineraries.build
 	end
 
 	def create
@@ -67,8 +66,6 @@ class EventsController < ApplicationController
         :title,
         :note,
         :organizer_id,
-        :location,
-        :event_day,
         :itineraries_attributes => [
         	:id,
         	:note,

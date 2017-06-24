@@ -9,7 +9,7 @@
       <%= f.text_area :location %></div>
 
       <div class="field"> <%= f.label :meet_time %><br>
-      <%= f.time_select :meet_time %></div>
+      <%= f.datetime_select :meet_time, :min => Date.today.year%></div>
 
 
       <div class="actions">
