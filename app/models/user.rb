@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def upcoming_itineraries
-    self.itineraries.select { |itin| itin if itin.meet_time > Date.today }
+    self.itineraries.select { |itin| itin if itin.meet_time > DateTime.now }
 
   end
 

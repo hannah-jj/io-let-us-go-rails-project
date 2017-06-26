@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
 	before_action :user_only, only: [:new, :edit, :update, :destroy]
+	before_action :user_autho, only: [:edit, :update, :destroy, :delete]
 
 	def index
 		if params[:event_id]
@@ -72,6 +73,13 @@ class CommentsController < ApplicationController
 	end
 
 	private
+	def user_autho
+		
+		if @comment.user != current_user
+			redirect_to comment_path(@comment), alert: "Access denied"
+		end
+	end
+
 	def set_comment
 		@comment = Comment.find(params[:id])
 	end
