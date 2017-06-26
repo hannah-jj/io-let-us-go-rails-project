@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 	before_action :user_only, only: [:new, :edit, :update, :destroy]
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
-	before_action :user_autho, only: [:edit, :update, :destroy]
+	before_action :user_autho, only: [:edit, :update, :destroy, :delete]
 	def index
 		@events = Event.all
 	end
@@ -39,6 +39,7 @@ class EventsController < ApplicationController
 	end
 
 	def update
+		
 		if @event.update(event_params)
 			redirect_to event_path(@event), notice: "Event successfully updated"
 		else
@@ -48,6 +49,11 @@ class EventsController < ApplicationController
 
 	def popular
 		@results = Event.top_popular
+	end
+
+	def destroy
+		Event.delete(@event)
+		redirect_to home_path, notice: "event deleted"
 	end
 
 	private

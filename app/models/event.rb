@@ -12,6 +12,25 @@ class Event < ApplicationRecord
 
   validates :title, presence: true
 
+    def itineraries_attributes=(itineraries_attributes)
+    itineraries_attributes.values.each do |attribute|
+      if attribute != ""
+        #only check the note & location
+        if attribute[:id] #record exists, in edit route
+          Itinerary.find(attribute[:id]).update(attribute)
+        else #in new route
+          if attribute[:note] != "" && attribute[:location] != ""
+            #if adding new event, and nothing was updated on note and location
+            #dont add any itinerary
+            new_itinerary = Itinerary.new(attribute)
+            self.itineraries << new_itinerary
+            new_itinerary.save
+          end
+        end
+      end
+    end
+  end
+
   # returns an array of hash containing event id and their stats example below
   # [{event_id: 1, stats: [{:status => "yes", :value => 0} ,{:status => "maybe", :value => 0},{:status => "no", :value => 0}]},
   # .... ]

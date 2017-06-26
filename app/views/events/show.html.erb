@@ -24,6 +24,7 @@
 
         <% if current_user && current_user == @event.organizer %>
             <p><%= link_to "Edit This Event ", edit_event_path(@event) %>
+            <%= button_to "Delete", @event, :method => "delete" %>
             </p>
         <% end %>
   	</div>
