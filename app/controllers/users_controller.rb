@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :user_only
-	before_action :set_user, only: [:show, :edit, :update]
-	before_action :user_autho, only: [:edit, :update]
+	before_action :set_user, only: [:show, :edit, :update, :upcoming]
+	before_action :user_autho, only: [:edit, :update, :upcoming]
 
 	def update
 		if @user.update(user_params)
@@ -9,6 +9,10 @@ class UsersController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def upcoming
+		@itineraries = @user.upcoming_itineraries
 	end
 
 	private

@@ -4,8 +4,10 @@
 
 	<td><%= button_to "View", itinerary_path(itinerary), :method => "get" %></td>
 	
-	<td><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %></td>
+	<% if !current_user.nil? %>
+		<td><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %></td>
 
-	<td><%= button_to "Delete", itinerary, :method => "delete" %></td>
+		<td><%= button_to "Delete", itinerary, :method => "delete" %></td>
 
+	<% end %>
 </tr>
