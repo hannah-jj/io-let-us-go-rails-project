@@ -48,7 +48,8 @@ class CommentsController < ApplicationController
 		if @comment.save
 			redirect_to event_path(@comment.event), notice: "Comment successfully created"
 		else
-			redirect_to event_path(@comment.event), alert: "comment didn't post correctly"
+			@event = @comment.event
+			render :new
 		end
 	end
 
@@ -60,7 +61,8 @@ class CommentsController < ApplicationController
 		if @comment.update(comment_params)
 			redirect_to event_path(@comment.event), notice: "Comment successfully updated"
 		else
-			redirect_to event_path(@comment.event), alert: "Comment can't be blank"
+			@event = @comment.event
+			render :edit
 		end
 	end
 

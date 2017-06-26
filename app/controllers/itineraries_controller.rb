@@ -48,7 +48,8 @@ class ItinerariesController < ApplicationController
 		if @itinerary.save
 			redirect_to event_path(@itinerary.event), notice: "Itinerary successfully created"
 		else
-			redirect_to event_path(@itinerary.event), alert: "itinerary didn't post correctly"
+			@event = @itinerary.event
+			render :new
 		end
 	end
 
@@ -60,7 +61,8 @@ class ItinerariesController < ApplicationController
 		if @itinerary.update(itinerary_params)
 			redirect_to event_path(@itinerary.event), notice: "Itinerary successfully updated"
 		else
-			redirect_to event_path(@itinerary.event), alert: "Itinerary can't be blank"
+			@event = @itinerary.event
+			render :edit
 		end
 	end
 

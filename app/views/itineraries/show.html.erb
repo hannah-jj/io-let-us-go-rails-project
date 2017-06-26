@@ -1,9 +1,4 @@
 <p><%= link_to "Back To The Event ", event_path(@event) %></p>
 
-<table class="table table-striped table-hover">
-	<tbody>
-
-		<legend>Event: <%= @event.title %></legend>
-			<%= render partial: 'detail', locals: {itinerary: @itinerary } %>
-	</tbody>
-</table>
+<legend>Event: <%= @event.title %></legend>
+	<%= render partial: 'detail', locals: {itinerary: @itinerary } %>

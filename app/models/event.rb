@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  
   belongs_to :organizer, :class_name => "User"
   
   has_many :event_users, class_name: "Event_User"
@@ -9,7 +10,7 @@ class Event < ApplicationRecord
   has_many :itineraries
   accepts_nested_attributes_for :itineraries
 
-  validates_presence_of :title
+  validates :title, presence: true
 
   # returns an array of hash containing event id and their stats example below
   # [{event_id: 1, stats: [{:status => "yes", :value => 0} ,{:status => "maybe", :value => 0},{:status => "no", :value => 0}]},

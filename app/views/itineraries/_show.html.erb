@@ -1,6 +1,8 @@
 <!-- shows only the note part of itinerary -->
 <tr class="info">
-	<td><%= link_to itinerary.note, itinerary_path(itinerary)%></td>
+	<td><%= itinerary.note %></td>
+
+	<td><%= button_to "View", itinerary_path(itinerary), :method => "get" %></td>
 	
 	<td><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %></td>
 

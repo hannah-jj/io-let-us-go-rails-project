@@ -1,3 +1,6 @@
+<% if !@comment.valid? %>
+  <div class="alert-danger"><%= @comment.errors.messages %></div>
+<% end %>
 
 <%= form_for(comment) do |f| %>
       <div class="form-group"> 
