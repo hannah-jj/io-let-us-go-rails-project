@@ -4,6 +4,10 @@ class EventsController < ApplicationController
 	before_action :user_autho, only: [:edit, :update, :destroy, :delete]
 	def index
 		@events = Event.all
+		 respond_to do |f|
+	      f.html { render :index }
+	      f.json { render json: @events }
+	    end
 	end
 
 	def show
@@ -21,16 +25,20 @@ class EventsController < ApplicationController
 		#to display itineraries
 		@itineraries = @event.itineraries
 
+		# json or regular html
+		 respond_to do |f|
+	      f.html { render :show }
+	      f.json { render json: @event }
+	    end
+
 	end
 
 	def new
-
 		@event = Event.new
 		@event.itineraries.build
 	end
 
 	def create
-
 		@event = Event.new(event_params)
 		
 		if @event.save
