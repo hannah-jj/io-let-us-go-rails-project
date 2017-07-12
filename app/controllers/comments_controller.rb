@@ -14,6 +14,10 @@ class CommentsController < ApplicationController
 		else
 			redirect_to events_path, :alert => "Access Denied"
 		end
+		respond_to do |f|
+	      f.html { render :index }
+	      f.json { render json: @comments }
+	    end
 	end
 
 	def show

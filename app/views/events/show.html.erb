@@ -54,8 +54,11 @@
 <!-- Comments from users -->
 <div class="bs-component">
     <div class="page-header">
-        <h1 id="typography">Comments: </h1><%= link_to "All Comments", event_comments_path(@event) %>
+        <h1 id="typography">Comments: </h1>
+        <button class="load-comments">Load Comments</button>
+            <div class="comments-link"><%= link_to "All Comments", event_comments_path(@event) %>
         | <%= link_to " Add Comment", new_event_comment_path(@event)%>
+            </div>
 
 <!-- render all comments for this event -->
         <% if @comments.nil? %>
