@@ -11,6 +11,13 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def show
+		respond_to do |f|
+	      f.html { render :show }
+	      f.json { render json: @user }
+	    end
+	end
+
 	def upcoming
 		@itineraries = @user.upcoming_itineraries
 	end
