@@ -9,14 +9,14 @@
 <div class="bs-component">
     <div class="page-header">
         <% if @user.meetings.count == 0 %>
-        	<h1 id="typography"><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  organized any events yet.</h1>
-        	<p><%= link_to "Organize an Event", new_event_path, :class=>"btn btn-warning btn-lg"%></p>
+            <h1 id="typography"><%= current_user == @user ? "You haven't" : "#{@user.email} hasn't" %>  organized any events yet.</h1>
+            <p><%= link_to "Organize an Event", new_event_path, :class=>"btn btn-warning btn-lg"%></p>
 
         <% else %>
             <h1 id="typography"> As An Organizer:</h1>
             <% @user.meetings.each do |meeting| %>
                 <div class="panel-warning">
-                	<%= render partial: 'events/detail', locals: {event: meeting} %>
+                    <%= render partial: 'events/detail', locals: {event: meeting} %>
                 </div>
             <% end %>
         <% end %>
@@ -38,7 +38,6 @@
             </div>
         <% end %>
     <% end %>
-
 </div>
             
 

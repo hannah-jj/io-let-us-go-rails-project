@@ -2,7 +2,9 @@
 <!-- Event Information -->
 <div class="bs-component">
     <div class="page-header">
-        <h1><%= @event.title.capitalize %></h1>
+        <h1 class="eventTitle"><%= @event.title.capitalize %></h1>
+        <button class="js-next" data-id="<%=@event.id%>">Next Event</button>
+
         <!-- showing stats of participants -->
         	<ul class="nav nav-pills">
                 <% (0..2).each do |i| %>
@@ -16,9 +18,9 @@
                     </li>                  
                 <% end %>
         	</ul>
-        <p><strong>Organized by:</strong> <%= @event.organizer.name ? @event.organizer.name : @event.organizer.email%></p>
+        <p class="organizer"><strong>Organized by:</strong> <%= @event.organizer.email%></p>
        
-        <p><strong>Details:</strong> <%= @event.note %></p>
+        <p class="details"><strong>Details:</strong> <%= @event.note %></p>
 
 <!-- Event Update & Itinerary -->
 
