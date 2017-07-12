@@ -1,6 +1,9 @@
-{{#comments}}
+
+{{#each comments}}
   <tr class="info">
-    <td comment-id="{{id}}"> <a href="#">{{note}} @ {{email}}</td>
+    <td>{{attributes.note}}</td>
+    <td>{{attributes.email}}</td>
+    <td><button class="view-comment" comment-id="{{id}}">View</button></td>
   </tr>
-{{/comments}}
+{{/each}}
 

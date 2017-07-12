@@ -1,10 +1,5 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :title, :note, :stats
-  belongs_to :organizer, :class_name => "User"
-  has_many :comments
-  has_many :itineraries
-  has_many :participants
-
+  attributes :id, :title, :note, :organizer, :participants, :comments, :itineraries, :stats
 
   def participants
   	object.event_users.map do |eu|
@@ -15,5 +10,27 @@ class EventSerializer < ActiveModel::Serializer
   def stats
   	object.event_stats
   end
+
+  def organizer
+    {email: object.organizer.email}
+  end
+
+  def comments
+    object.comments.map do |c|
+      {email: c.user.email, 
+        note: c.note
+      }
+    end
+  end
+
+  def itineraries
+        object.itineraries.map do |i|
+      {note: i.note, 
+        location: i.location,
+        meet_time: i.meet_time
+      }
+    end
+  end
+
 
 end

@@ -5,6 +5,7 @@ $(document).ready(function(){
 function attachListeners(){
 	$('.js-next').on("click", () => nextEvent());
 	$('.load-comments').on("click", () => loadComments());
+	$('.load-comments').on("click", () => loadComments());
 
 
 }
@@ -23,16 +24,18 @@ function nextEvent(){
 }
 
 function displayEvent(data, nextId){
-	$(".eventTitle").text(data["title"]);
+	event = data["data"]["attributes"]
+	$(".eventTitle").text(event["title"]);
 	$(".js-next").attr("data-id", nextId);
-	$(".organizer").html("<strong>Organized by: </strong>" + data["organizer"]["email"]);
-	$(".details").html("<strong>Details:</strong>" + data["note"]);
+	$(".organizer").html("<strong>Organized by: </strong>" + event["organizer"]["email"]);
+	$(".details").html("<strong>Details:</strong>" + event["note"]);
 }
 
 function loadComments(){
 	var currentID = parseInt($(".js-next").attr("data-id"));
 	$.get("/events/" + currentID +"/comments.json", function(data){
-		console.log("here " + data[0]["email"])
-		HandlebarsTemplates['comments'](data)
-	})
+		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
+		$(".comments-link").html(commentsHTML);
+	});
+	
 }
