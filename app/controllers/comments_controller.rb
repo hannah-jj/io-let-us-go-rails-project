@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
-	before_action :user_only, only: [:new, :edit, :update, :destroy]
+	before_action :user_only, only: [:new, :edit, :update, :destroy, :ajax_create]
 	before_action :user_autho, only: [:edit, :update, :destroy, :delete]
 
 	def index
@@ -32,8 +32,11 @@ class CommentsController < ApplicationController
 		else
 			@comment = Comment.find(params[:id])
 			@event = @comment.event
-
 		end
+		respond_to do |f|
+	      f.html { render :show }
+	      f.json { render json: @comment }
+	    end
 	end
 
 	def new
@@ -56,6 +59,11 @@ class CommentsController < ApplicationController
 			@event = @comment.event
 			render :new
 		end
+	end
+
+	def ajax_create
+		@comment = Comment.create(comment_params)
+		render json: @comment
 	end
 
 	def edit

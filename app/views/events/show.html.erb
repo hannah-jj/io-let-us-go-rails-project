@@ -2,7 +2,7 @@
 <!-- Event Information -->
 <div class="bs-component">
     <div class="page-header">
-        <h1 class="eventTitle"><%= @event.title.capitalize %></h1>
+        <h1 class="eventTitle" user-id="<%=current_user.id%>"><%= @event.title.capitalize %></h1>
         <button class="js-next" data-id="<%=@event.id%>">Next Event</button>
 
         <!-- showing stats of participants -->
@@ -54,26 +54,18 @@
 <!-- Comments from users -->
 <div class="bs-component">
     <div class="page-header">
-        <h1 id="typography">Comments: </h1>
-        <button class="load-comments">Load Comments</button>
-        <button class="add-comment">Add Comment</button>
-        <table class="table table-striped table-hover">
-        <tbody class="comments-link">
-        </tbody>
-        </table>
         
-
-<!-- render all comments for this event -->
-        <% if @comments.nil? %>
-            <p> No comments yet. </p>
-        <% else %>
-            <table class="table table-striped table-hover">
-                <tbody>
-                    <% @comments.each do |comment| %>
-                        <%= render partial: 'comments/show', locals: {comment: comment }%>
-                    <% end %>
-                </tbody>
-            </table>
-        <% end %>
+<!--         <% if current_user %>
+        
+            <input type="text" id="new-comment">
+            <button class="add-comment btn-info">Add Comment</button>
+    
+        <% end %> -->
+        <button class="load-comments btn-info">Load Comments</button>
+        <div class="comments">
+        <!-- to load comments handlebar template -->
+        </div>
     </div>
 </div>
+        
+
