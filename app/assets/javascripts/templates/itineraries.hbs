@@ -1,0 +1,15 @@
+<table class="table table-striped table-hover">
+	<tbody class="itineraries-table">
+		{{#if itineraries}}
+			{{#each itineraries}}
+			  <tr class="info">
+			    <td>{{attributes.note}}</td>
+			    <td><a class="btn btn-info" itin={{id}} href="/events/{{attributes.event-id}}/itineraries/{{id}}">view</td>
+			  </tr>
+			{{/each}}
+		{{else}}
+			<tr class="no-comment"><td>no itineraries yet</td></tr>
+		{{/if}}
+	</tbody>
+</table>
+

@@ -18,3 +18,4 @@
 //= require_tree ./templates
 //= require_tree .
 //= require events
+//= require users

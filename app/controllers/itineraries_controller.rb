@@ -13,6 +13,10 @@ class ItinerariesController < ApplicationController
 		else
 			redirect_to events_path, :alert => "Access Denied"
 		end
+		respond_to do |f|
+	      f.html { render :index }
+	      f.json { render json: @itineraries }
+	    end
 	end
 
 	def show
@@ -27,8 +31,11 @@ class ItinerariesController < ApplicationController
 		else
 			@itinerary = Itinerary.find(params[:id])
 			@event = @itinerary.event
-
 		end
+		respond_to do |f|
+	      f.html { render :show }
+	      f.json { render json: @itinerary }
+	    end
 	end
 
 	def new
