@@ -1,8 +1,6 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   	$('.js-next').on("click", () => nextEvent());
 	$('.load-comments').on("click", () => loadComments());
-	// $('.add-comment').on("click", () => addComment());
-
 });
 
 function nextEvent(){
@@ -42,6 +40,7 @@ function addComment(){
 	let user_id = parseInt($(".eventTitle").attr("user-id"));
 	let commentData = {comment: { event_id: event_id, note: comment, user_id: user_id }};
 	let url = `/events/${event_id}/comments`
+
 	$.ajax({
 		method: 'POST',
 		url: url,
@@ -55,7 +54,7 @@ function addComment(){
 			<td>${comment["email"]}</td>
 			<td><a class="btn btn-info" href="/events/${comment['event-id']}/comments/${id}">view</td></tr>`
 			if ($(".no-comment").length){
-				loadComments()
+				$(".comments-table").html(newRow);
 			}
 			else {
 				$(".comments-table").append(newRow);
