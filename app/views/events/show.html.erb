@@ -3,7 +3,15 @@
 <div class="bs-component" >
     <div class="page-header">
         <h1 class="event-title"  max-id="<%=Event.last.id%>" user-id="<%=current_user.id%>"><%= @event.title.capitalize %></h1>
-        <button class="js-next" data-id="<%=@event.id%>">Next Event</button>
+        <button class="js-next btn btn-info" data-id="<%=@event.id%>">Next Event</button>
+        <% if current_user && current_user == @event.organizer %>
+            <%= link_to "Edit This Event ", edit_event_path(@event), class: "btn btn-info" %>
+            <%= button_to "Delete", @event, :method => "delete", class: "btn btn-info" %>
+            
+        <% end %>
+
+        <p class="organizer"><strong>Organized by:</strong> <%= @event.organizer.email%></p>
+        <p class="details"><strong>Details:</strong> <%= @event.note %></p>
 
         <!-- showing stats of participants -->
         	<ul class="nav nav-pills">
@@ -18,37 +26,25 @@
                     </li>                  
                 <% end %>
         	</ul>
-        <p class="organizer"><strong>Organized by:</strong> <%= @event.organizer.email%></p>
-       
-        <p class="details"><strong>Details:</strong> <%= @event.note %></p>
-
-<!-- Event Update & Itinerary -->
-
-        <% if current_user && current_user == @event.organizer %>
-            <p><%= link_to "Edit This Event ", edit_event_path(@event) %>
-            <%= button_to "Delete", @event, :method => "delete" %>
-            </p>
-        <% end %>
   	</div>
  </div>
+
 <!-- Itineraries -->
 <div class="bs-component">
-    <div class="page-header">
-        <h1 id="typography">Itineraries: </h1>
-        <button class="load-itineraries btn-info">Load Itineraries</button>
-        <button class="add-itinerary btn-info">Add Itinerary</button>
-        <div class="itineraries">
-        <!-- to load itinerary handlebar template -->
-        </div>
+    <h1 id="typography">Itineraries: </h1>
+    <button class="load-itineraries btn btn-info">Load Itineraries</button>
+    <button class="add-itinerary btn btn-info">Add Itinerary</button>
+    <div class="itineraries">
+    <!-- to load itinerary handlebar template -->
+    </div>
+</div>
 
 <!-- Comments from users -->
 <div class="bs-component">
-    <div class="page-header">
-        <h1 id="typography">Comments: </h1>
-        <button class="load-comments btn-info">Load Comments</button>
-        <div class="comments">
-        <!-- to load comments handlebar template -->
-        </div>
+    <h1 id="typography">Comments: </h1>
+    <button class="load-comments btn btn-info">Load Comments</button>
+    <div class="comments">
+    <!-- to load comments handlebar template -->
     </div>
 </div>
         
