@@ -17,14 +17,7 @@ class EventsController < ApplicationController
 			@event_user = Event_User.new
 		end
 		@stats =Event_User.stats(@event, current_user)
-
-		#to display comments from users
-		@comments = @event.comments
-		@comment = Comment.new
-
-		#to display itineraries
-		@itineraries = @event.itineraries
-
+		
 		# json or regular html
 		 respond_to do |f|
 	      f.html { render :show }

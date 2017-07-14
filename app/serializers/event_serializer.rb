@@ -2,9 +2,11 @@ class EventSerializer < ActiveModel::Serializer
   attributes :id, :title, :note, :organizer, :participants, :comments, :itineraries, :stats
 
   def participants
-  	object.event_users.map do |eu|
-  		{email: eu.participant.email, going: eu.going }
+    user_hash = {}
+  	object.event_users.each do |eu|
+  		user_hash[eu.participant.id] = [eu.participant.email, eu.going]
   	end
+    user_hash
   end
 
   def stats

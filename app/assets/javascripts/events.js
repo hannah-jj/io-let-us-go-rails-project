@@ -36,19 +36,44 @@ function nextEvent(){
 		$(".comments").html("");
 
 	}).fail(function(){
-		console.log("click again")
 		$(".js-next").attr("data-id", nextId); //advance button's id# by 1
 		nextEvent();
 	});
 	
 }
 
-function displayEvent(data, nextId){
+function displayEvent(data, id){
 	event = data["data"]["attributes"]
+	let user_id = parseInt($(".event-title").attr("user-id"));
+
 	$(".event-title").text(event["title"]);
-	$(".js-next").attr("data-id", nextId);
+	$(".js-next").attr("data-id", id);
 	$(".organizer").html("<strong>Organized by: </strong>" + event["organizer"]["email"]);
 	$(".details").html("<strong>Details:</strong>" + event["note"]);
+
+	let stats = event["stats"];
+	let statsHTML = "";
+	
+	let users_stat = event["participants"];
+	let current_user_stat = null;
+
+	if (Object.keys(users_stat).length != 0) {
+	current_user_stat =  users_stat[user_id] ? users_stat[user_id][1] : null
+	}
+
+	for(var i = 0; i < 3; i++){
+		if (stats[i]["status"]==current_user_stat) {
+		//if matching value for stat, make the button normal
+		statsHTML += `<li class="btn btn-warning btn-xs"><button class="btn-warning">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		}
+		else {// fade it out
+		statsHTML += `<li class="btn btn-warning btn-xs faded"><button class="btn-warning">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		
+		}
+
+
+	}
+	$(".stats").html(statsHTML);
 }
 
 //itineraries section for Event show page
@@ -94,7 +119,7 @@ function addComment(){
 			newRow = `<tr class="info">
 			<td>${comment["note"]}</td>
 			<td>${comment["email"]}</td>
-			<td><a class="btn btn-info" href="/events/${comment['event-id']}/comments/${id}">view</td></tr>`
+			<td align="right"><a class="btn-info" href="/events/${comment['event-id']}/comments/${id}">view</td></tr>`
 			if ($(".no-comment").length){
 				$(".comments-table").html(newRow);
 			}

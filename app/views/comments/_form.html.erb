@@ -1,5 +1,11 @@
-<% if !@comment.valid? %>
-  <div class="alert-danger"><%= @comment.errors.messages %></div>
+<% if !@comment.errors.any? %>
+  <div class="alert-danger">
+    <ul>
+      <%= @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= form_for(comment) do |f| %>
