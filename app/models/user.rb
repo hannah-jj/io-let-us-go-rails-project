@@ -6,9 +6,11 @@ class User < ApplicationRecord
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+  # organized meeting
   has_many :meetings, class_name: 'Event', foreign_key: :organizer_id
   has_many :itineraries, through: :meetings
 
+  # participating event
   has_many :event_users, class_name: 'Event_User',foreign_key: :participant_id
   has_many :events, through: :event_users
 

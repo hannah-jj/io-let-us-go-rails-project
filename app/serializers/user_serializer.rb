@@ -1,5 +1,19 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email
-  has_many :meetings, class_name: 'Event', foreign_key: :organizer_id
-  has_many :events, through: :event_users
+  attributes :id, :name, :email, :meetings, :events
+
+  #user organized meeting
+  def meetings
+  	object.meetings.map do |meeting|
+  		{id: meeting.id, attributes: {title: meeting.title}}
+  	end
+  end
+
+  #user particiating event
+  def events
+  	object.events.map do |event|
+  		{id: event.id, attributes: {title: event.title}}
+  	end
+  end
+
+
 end
