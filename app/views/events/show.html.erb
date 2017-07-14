@@ -1,8 +1,8 @@
 
 <!-- Event Information -->
-<div class="bs-component">
+<div class="bs-component" >
     <div class="page-header">
-        <h1 class="eventTitle" user-id="<%=current_user.id%>"><%= @event.title.capitalize %></h1>
+        <h1 class="event-title"  max-id="<%=Event.last.id%>" user-id="<%=current_user.id%>"><%= @event.title.capitalize %></h1>
         <button class="js-next" data-id="<%=@event.id%>">Next Event</button>
 
         <!-- showing stats of participants -->

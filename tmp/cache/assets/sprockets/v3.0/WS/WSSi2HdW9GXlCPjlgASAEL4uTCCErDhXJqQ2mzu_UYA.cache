@@ -1,0 +1,28 @@
+{:uriI"Øfile:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/events.hbs?type=text/x-handlebars-template&id=316b04cf7839ed0285ae7948d4db95c2ae18a5288e7d25814405b98b6dcacbd5:ET:load_pathI"app/assets/javascripts;T:filenameI"0app/assets/javascripts/templates/events.hbs;T:	nameI"templates/events;T:logical_pathI"templates/events.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"k<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Event Title</th>
+			<th>Going</th>
+			<th>Maybe</th>
+			<th>No</th>
+		<tr>
+	</thead>
+	<tbody>
+		<% @results.each_with_index do |result, i| %>
+			<% @e = Event.find(result[:event_id]) %>
+		<tr class="info">
+			<th><%= i + 1 %></th>
+			<th><%= link_to @e.title, event_path(@e) %></th>
+			<th><span class="badge"><%= result[:stats][0][:value]%></span></th>
+			<th><span class="badge"><%= result[:stats][1][:value]%></span></th>
+			<th><span class="badge"><%= result[:stats][2][:value]%></span></th>
+		</tr>
+		<% end %>
+	</tbody>
+</table>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"{file-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/events.hbs;TTF:charsetI"
+utf-8;F:digest"%©¯Õn¤S®N‰É`_ó¾˜u;@Ï®£µž5vám]6M:lengthik:dependencies_digest"%‡°dAÑRií¼É«;~îë|È¡”x¼~ƒS}#:idI"E316b04cf7839ed0285ae7948d4db95c2ae18a5288e7d25814405b98b6dcacbd5;F:
+mtimel+
+ßhY

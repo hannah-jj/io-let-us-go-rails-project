@@ -1,18 +1,14 @@
 <div class="bs-component">
     <div class="jumbotron">
-        <h1>Events: </h1>
+        <h1 class="main-title" event-id="all">Events: </h1>
         <p>Here are all the events.  Have fun!</p>
         <p><%= link_to "Check out the events by popularities", popular_events_path, :class=>"btn btn-info btn-lg"%></p>
    	</div>
 </div>    
 
 <div class="bs-component">
-    <div class="panel panel-default">
-	    <% @events.each do |event| %>
-	    	<div class="panel-warning">
-	    		<%= render partial: 'detail', locals: {event: event} %>
-	    	</div>
-	    <% end %>
+    <div class="panel panel-default events-table">
+	<!-- to display all events-->
 	</div>
 </div>
 

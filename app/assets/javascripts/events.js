@@ -1,13 +1,33 @@
 $(document).on('turbolinks:load', function(){
+	//events index page
+	showEvents();
+	//below functions for event/show page
   	$('.js-next').on("click", () => nextEvent());
 	$('.load-comments').on("click", () => loadComments());
 	$('.load-itineraries').on("click", () => loadItineraries());
 	$('.add-itinerary').on("click", () => addItinerary());
+	
 });
+//show all events on idex page
+function showEvents(){
+	if ($(".main-title").attr("event-id") == "all") {
+		$.get("/events.json", function(data){ 
+			var eventsHTML = HandlebarsTemplates['events']({events : data["data"]});
+			$(".events-table").html(eventsHTML);
+		});	
+	}
+}
 
 //event section
 function nextEvent(){
-	var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+	var maxID = parseInt($(".event-title").attr("max-id"));
+	var currentID = parseInt($(".js-next").attr("data-id"));
+	if (currentID >= maxID) {//at last event 
+		currentID = 0; //reset to first event
+		$(".alert-success").html("reached last event, reverting to first event")
+	}
+	
+	let nextId = currentID + 1;
 
 	$.get("/events/" + nextId +".json", function(data){
 		displayEvent(data, nextId);
@@ -20,11 +40,12 @@ function nextEvent(){
 		$(".js-next").attr("data-id", nextId); //advance button's id# by 1
 		nextEvent();
 	});
+	
 }
 
 function displayEvent(data, nextId){
 	event = data["data"]["attributes"]
-	$(".eventTitle").text(event["title"]);
+	$(".event-title").text(event["title"]);
 	$(".js-next").attr("data-id", nextId);
 	$(".organizer").html("<strong>Organized by: </strong>" + event["organizer"]["email"]);
 	$(".details").html("<strong>Details:</strong>" + event["note"]);
@@ -59,7 +80,7 @@ function loadComments(){
 function addComment(){
 	let comment = $("#new-comment")[0].value;
 	let event_id = parseInt($(".js-next").attr("data-id"));
-	let user_id = parseInt($(".eventTitle").attr("user-id"));
+	let user_id = parseInt($(".event-title").attr("user-id"));
 	let commentData = {comment: { event_id: event_id, note: comment, user_id: user_id }};
 
 	$.ajax({

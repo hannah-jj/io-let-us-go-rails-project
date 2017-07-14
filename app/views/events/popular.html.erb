@@ -12,11 +12,11 @@
 		<% @results.each_with_index do |result, i| %>
 			<% @e = Event.find(result[:event_id]) %>
 		<tr class="info">
-			<th><%= i + 1 %></th>
-			<th><%= link_to @e.title, event_path(@e) %></th>
-			<th><span class="badge"><%= result[:stats][0][:value]%></span></th>
-			<th><span class="badge"><%= result[:stats][1][:value]%></span></th>
-			<th><span class="badge"><%= result[:stats][2][:value]%></span></th>
+			<td><%= i + 1 %></td>
+			<td><%= link_to @e.title, event_path(@e) %></th>
+			<td><span class="badge"><%= result[:stats][0][:value]%></span></td>
+			<td><span class="badge"><%= result[:stats][1][:value]%></span></td>
+			<td><span class="badge"><%= result[:stats][2][:value]%></span></td>
 		</tr>
 		<% end %>
 	</tbody>
