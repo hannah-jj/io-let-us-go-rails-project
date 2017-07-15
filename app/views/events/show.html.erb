@@ -1,7 +1,7 @@
 
 <!-- Event Information -->
 <div class="bs-component" >
-    <div class="page-header">
+    <div class="jumbotron row" style="background:transparent url('/assets/to-do.jpg') no-repeat center center /cover">
         <h1 class="event-title"  max-id="<%=Event.last.id%>" event="single" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>
         <button class="js-next btn-xs btn-info" data-id="<%=@event.id%>">Next Event</button>
         <a href="<%=@event.id%>/edit" class="btn-xs btn-info edit-event">Edit</a>

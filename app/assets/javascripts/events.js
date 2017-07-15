@@ -31,7 +31,7 @@ function showEvents(id){
 function nextEvent(){
 	var maxID = parseInt($(".event-title").attr("max-id"));
 	let currentID = parseInt($(".js-next").attr("data-id"));
-	
+
 	if (currentID >= maxID) {//at last event 
 		currentID = 0; //reset to first event
 		$(".alert-success").html("reached last event, reverting to first event")
@@ -84,7 +84,6 @@ function displayEvent(data, event_id){
 		}
 		else {// fade it out
 		statsHTML += `<li class="btn btn-warning btn-xs faded"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
-		
 		}
 	}
 	$(".stats").html(statsHTML);
@@ -94,25 +93,18 @@ function displayEvent(data, event_id){
 		statUpdate(e, event_id);
 	}); 
 }
-
+//update the statistics buttons for event
 function statUpdate(e, event_id){
 
 	let going = $(e.target).text();
 	let statData = {event_users: {event_id: event_id, going: going}};
-	
-	$.ajax({
-		method: 'POST',
-		url: `/event_users`,
-		data: statData,
-		success: function(result){
-			//reload event info
-			displayEvent(result, event_id);
-
-		}	
+	$.post("/event_users", statData, function(result){
+		displayEvent(result, event_id);
 	});
 }
 
 //itineraries section for Event show page
+//load Itineraries
 function loadItineraries(){
 	var event_id = parseInt($(".js-next").attr("data-id"));
 	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
@@ -120,21 +112,21 @@ function loadItineraries(){
 		$(".itineraries").html(itinerariesHTML);
 	});	
 }
-
+//redirect to the add itinerary page
 function addItinerary(){
 	let event_id = parseInt($(".js-next").attr("data-id"));
 	window.location.href = `/events/${event_id}/itineraries/new`;
 }
-
-
 // comments section for Event show page
+
+//declare Comment object
 function Comment(id, event_id, email, comment){
 	this.id = id;
 	this.event = event_id;
 	this.comment = comment;
 	this.email = email;
 }
-
+// prototype function for Comment Object
 Comment.prototype.newComment = function() {
 	return (`<tr class="info">
 			<td>${this.comment}</td>
@@ -142,35 +134,28 @@ Comment.prototype.newComment = function() {
 			<td align="right"><a class="btn-info" href="/events/${this.event_id}/comments/${this.id}">view</td></tr>
 		`);
 }
-
+//add comment on event show page
 function addComment(){
 	let comment = $("#new-comment")[0].value;
 	let event_id = parseInt($(".js-next").attr("data-id"));
 	let user_id = parseInt($(".event-title").attr("user-id"));
 	let commentData = {comment: { event_id: event_id, note: comment, user_id: user_id }};
 
-	$.ajax({
-		method: 'POST',
-		url: `/events/${event_id}/comments`,
-		data: commentData,
-		success: function(result){
-			//no comments yet
-			commentData = result["data"]["attributes"];
-			let id = result["data"]["id"];
-
-			var comment = new Comment(id, event_id, commentData["email"], commentData["note"]);
-			
-			if ($(".no-comment").length){
-				$(".comments-table").html(comment.newComment());
-			}
-			else {
-				$(".comments-table").append(comment.newComment());
-			}
-		}	
+	$.post(`/events/${event_id}/comments`, commentData, function(result){
+		commentData = result["data"]["attributes"];
+		let id = result["data"]["id"];
+		var comment = new Comment(id, event_id, commentData["email"], commentData["note"]);
+		
+		if ($(".no-comment").length){
+			$(".comments-table").html(comment.newComment());
+		}
+		else {
+			$(".comments-table").append(comment.newComment());
+		}
 	});
-
 }
 
+//load comments on event show page
 function loadComments(){
 	var event_id = parseInt($(".js-next").attr("data-id"));
 	$.get("/events/" + event_id +"/comments.json", function(data){ 
