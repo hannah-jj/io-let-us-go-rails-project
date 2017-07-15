@@ -1,8 +1,8 @@
 <div class="bs-component">
-    <div class="jumbotron">
+    <div class="jumbotron row" style="background:transparent url('/assets/desk.jpg') no-repeat center center /cover">
         <h1 class="main-user" user-id="<%=@user.id%>">Hello <%= current_user.name%></h1>
         <p>Here are <%= current_user == @user ? "your" : "#{@user.email}'s" %> events.  Have fun!</p>
-        <p><%= link_to "Check out your upcoming itineraries", upcoming_user_path(@user), :class=>"btn btn-warning btn-lg"%></p>
+        <p><%= link_to "Check out your upcoming itineraries", upcoming_user_path(@user), :class=>"btn btn-lg"%></p>
    	</div>
 </div>    
 

@@ -1,5 +1,11 @@
-<% if !@itinerary.valid? %>
-  <div class="alert-danger"><%= @itinerary.errors.messages %></div>
+<% if @itinerary.errors.any? %>
+  <div class="alert-danger">
+    <ul>
+      <%= @itinerary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= form_for(itinerary) do |f| %>
