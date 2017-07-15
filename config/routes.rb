@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :event_users
+  # resources :event_users
 
   resources :comments
 
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :itineraries
 
   post "/events/:id/comments" =>"comments#ajax_create"
+  post "/event_users" =>"event_users#ajax_create"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,30 +2,20 @@
 <!-- Event Information -->
 <div class="bs-component" >
     <div class="page-header">
-        <h1 class="event-title"  max-id="<%=Event.last.id%>" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>
+        <h1 class="event-title"  max-id="<%=Event.last.id%>" event="single" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>
         <button class="js-next btn btn-info" data-id="<%=@event.id%>">Next Event</button>
         <% if current_user && current_user == @event.organizer %>
             <%= link_to "Edit This Event ", edit_event_path(@event), class: "btn btn-info" %>
             <%= button_to "Delete", @event, :method => "delete", class: "btn btn-info" %>
         <% end %>
         <div class="event-info">
-            <p class="organizer"><strong>Organized by:</strong> <%= @event.organizer.email%></p>
-            <p class="details"><strong>Details:</strong> <%= @event.note %></p>
-
-            <!-- showing stats of participants -->
-            	<ul class="nav nav-pills stats">
-                    <% (0..2).each do |i| %>
-                        <li class="btn btn-warning btn-xs <%= 'faded' if @stats[3][:status] != @stats[i][:status] %>" >
-                            <%= form_for @event_user do |f| %>
-                            <%= f.hidden_field :event_id, :value =>@event.id %>
-                            <%= f.hidden_field :going, :value => @stats[i][:status] %>
-                            <%= f.submit @stats[i][:status], :method => "POST", :class => "btn-warning" %>
-                            <span class="badge"><%= @stats[i][:value]%></span>
-                            <% end %>
-                        </li>                  
-                    <% end %>
-            	</ul>
+            <p class="organizer"></p>
+            <p class="details"></p>
         </div>
+        <div class="stats">
+                <!-- showing stats of participants -->
+        </div>
+        
   	</div>
  </div>
 

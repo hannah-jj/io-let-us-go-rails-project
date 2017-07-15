@@ -1,7 +1,13 @@
 $(document).on('turbolinks:load', function(){
-	//events index page
+	var currentID = parseInt($(".js-next").attr("data-id"));
+
+	//load events on events index page
 	showEvents();
-	//below functions for event/show page
+
+	//load an event on show page
+	showEvent(currentID)
+
+	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
 	$('.load-comments').on("click", () => loadComments());
 	$('.load-itineraries').on("click", () => loadItineraries());
@@ -18,10 +24,19 @@ function showEvents(){
 	}
 }
 
-//event section
+//show an event on show page
+function showEvent(id){
+	if ($(".event-title").attr("event") == "single") {
+		$.get("/events/"+id+".json", function(data){ 
+			displayEvent(data, id);
+		});	
+	}
+}
+
+//when nextEvent button is clicked
 function nextEvent(){
 	var maxID = parseInt($(".event-title").attr("max-id"));
-	var currentID = parseInt($(".js-next").attr("data-id"));
+	let currentID = parseInt($(".js-next").attr("data-id"));
 	if (currentID >= maxID) {//at last event 
 		currentID = 0; //reset to first event
 		$(".alert-success").html("reached last event, reverting to first event")
@@ -42,18 +57,22 @@ function nextEvent(){
 	
 }
 
-function displayEvent(data, id){
+//display event's basic info
+function displayEvent(data, event_id){
 	event = data["data"]["attributes"]
 	let user_id = parseInt($(".event-title").attr("user-id"));
 
+	//update event info
 	$(".event-title").text(event["title"]);
-	$(".js-next").attr("data-id", id);
+	$(".js-next").attr("data-id", event_id);
 	$(".organizer").html("<strong>Organized by: </strong>" + event["organizer"]["email"]);
 	$(".details").html("<strong>Details:</strong>" + event["note"]);
 
+	//update stats 
 	let stats = event["stats"];
 	let statsHTML = "";
 	
+	//get current user's participation if any
 	let users_stat = event["participants"];
 	let current_user_stat = null;
 
@@ -61,19 +80,40 @@ function displayEvent(data, id){
 	current_user_stat =  users_stat[user_id] ? users_stat[user_id][1] : null
 	}
 
+	//display stats button
 	for(var i = 0; i < 3; i++){
 		if (stats[i]["status"]==current_user_stat) {
 		//if matching value for stat, make the button normal
-		statsHTML += `<li class="btn btn-warning btn-xs"><button class="btn-warning">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		statsHTML += `<li class="btn btn-warning btn-xs"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
 		}
 		else {// fade it out
-		statsHTML += `<li class="btn btn-warning btn-xs faded"><button class="btn-warning">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		statsHTML += `<li class="btn btn-warning btn-xs faded"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
 		
 		}
-
-
 	}
 	$(".stats").html(statsHTML);
+
+	//handles clicks for participation
+	$('.participate').click(function(e){
+		statUpdate(e, event_id);
+	}); 
+}
+
+function statUpdate(e, event_id){
+
+	let going = $(e.target).text();
+	let statData = {event_users: {event_id: event_id, going: going}};
+	
+	$.ajax({
+		method: 'POST',
+		url: `/event_users`,
+		data: statData,
+		success: function(result){
+			//reload event info
+			displayEvent(result, event_id);
+
+		}	
+	});
 }
 
 //itineraries section for Event show page
