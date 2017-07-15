@@ -1,32 +1,26 @@
-$(document).on('turbolinks:load', function(){
+function eventsListeners(){
 	var currentID = parseInt($(".js-next").attr("data-id"));
 
-	//load events on events index page
-	showEvents();
-
-	//load an event on show page
-	showEvent(currentID)
+	//load events
+	showEvents(currentID);
 
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
-	$('.load-comments').on("click", () => loadComments());
 	$('.load-itineraries').on("click", () => loadItineraries());
 	$('.add-itinerary').on("click", () => addItinerary());
+	$('.load-comments').on("click", () => loadComments());
 	
-});
-//show all events on idex page
-function showEvents(){
+}
+
+//show all events on idex page or one event on show page
+function showEvents(id){
 	if ($(".main-title").attr("event-id") == "all") {
 		$.get("/events.json", function(data){ 
 			var eventsHTML = HandlebarsTemplates['events']({events : data["data"]});
 			$(".events-table").html(eventsHTML);
 		});	
 	}
-}
-
-//show an event on show page
-function showEvent(id){
-	if ($(".event-title").attr("event") == "single") {
+	else {
 		$.get("/events/"+id+".json", function(data){ 
 			displayEvent(data, id);
 		});	
@@ -37,6 +31,7 @@ function showEvent(id){
 function nextEvent(){
 	var maxID = parseInt($(".event-title").attr("max-id"));
 	let currentID = parseInt($(".js-next").attr("data-id"));
+	
 	if (currentID >= maxID) {//at last event 
 		currentID = 0; //reset to first event
 		$(".alert-success").html("reached last event, reverting to first event")
@@ -133,14 +128,19 @@ function addItinerary(){
 
 
 // comments section for Event show page
-function loadComments(){
-	var event_id = parseInt($(".js-next").attr("data-id"));
-	$.get("/events/" + event_id +"/comments.json", function(data){ 
-		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
-		$(".comments").html(commentsHTML);
+function Comment(id, event_id, email, comment){
+	this.id = id;
+	this.event = event_id;
+	this.comment = comment;
+	this.email = email;
+}
 
-		$('.add-comment').on("click", () => addComment());
-	});	
+Comment.prototype.newComment = function() {
+	return (`<tr class="info">
+			<td>${this.comment}</td>
+			<td>${this.email}</td>
+			<td align="right"><a class="btn-info" href="/events/${this.event_id}/comments/${this.id}">view</td></tr>
+		`);
 }
 
 function addComment(){
@@ -155,19 +155,28 @@ function addComment(){
 		data: commentData,
 		success: function(result){
 			//no comments yet
-			comment = result["data"]["attributes"];
+			commentData = result["data"]["attributes"];
 			let id = result["data"]["id"];
-			newRow = `<tr class="info">
-			<td>${comment["note"]}</td>
-			<td>${comment["email"]}</td>
-			<td align="right"><a class="btn-info" href="/events/${comment['event-id']}/comments/${id}">view</td></tr>`
+
+			var comment = new Comment(id, event_id, commentData["email"], commentData["note"]);
+			
 			if ($(".no-comment").length){
-				$(".comments-table").html(newRow);
+				$(".comments-table").html(comment.newComment());
 			}
 			else {
-				$(".comments-table").append(newRow);
+				$(".comments-table").append(comment.newComment());
 			}
 		}	
 	});
 
+}
+
+function loadComments(){
+	var event_id = parseInt($(".js-next").attr("data-id"));
+	$.get("/events/" + event_id +"/comments.json", function(data){ 
+		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
+		$(".comments").html(commentsHTML);
+
+		$('.add-comment').on("click", () => addComment());
+	});	
 }

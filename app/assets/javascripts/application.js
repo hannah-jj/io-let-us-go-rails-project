@@ -19,3 +19,7 @@
 //= require_tree .
 //= require events
 //= require users
+$(document).on('turbolinks:load', function(){
+	eventsListeners();
+	usersListeners();
+});

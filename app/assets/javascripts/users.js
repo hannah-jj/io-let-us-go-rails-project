@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+function usersListeners(){
 
 	var user_id = parseInt($(".main-user").attr("user-id"));
 
@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function(){
 	  		loadEvents(eventData);
 		});	
 	}
-});
+}
 
 function loadMeetings(data){
 	var meetingsHTML = HandlebarsTemplates['events']({events : data});
