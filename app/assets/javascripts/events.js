@@ -65,8 +65,9 @@ function displayEvent(data, event_id){
 	//update event info
 	$(".event-title").text(event["title"]);
 	$(".js-next").attr("data-id", event_id);
+	$(".edit-event").attr("href", event_id +"/edit");
 	$(".organizer").html("<strong>Organized by: </strong>" + event["organizer"]["email"]);
-	$(".details").html("<strong>Details:</strong>" + event["note"]);
+	$(".details").html("<strong>Details: </strong>" + event["note"]);
 
 	//update stats 
 	let stats = event["stats"];

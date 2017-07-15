@@ -3,15 +3,11 @@
 <div class="bs-component" >
     <div class="page-header">
         <h1 class="event-title"  max-id="<%=Event.last.id%>" event="single" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>
-        <button class="js-next btn btn-info" data-id="<%=@event.id%>">Next Event</button>
-        <% if current_user && current_user == @event.organizer %>
-            <%= link_to "Edit This Event ", edit_event_path(@event), class: "btn btn-info" %>
-            <%= button_to "Delete", @event, :method => "delete", class: "btn btn-info" %>
-        <% end %>
-        <div class="event-info">
-            <p class="organizer"></p>
-            <p class="details"></p>
-        </div>
+        <button class="js-next btn-xs btn-info" data-id="<%=@event.id%>">Next Event</button>
+        <a href="<%=@event.id%>/edit" class="btn-xs btn-info edit-event">Edit</a>
+        
+        <p class="organizer"></p>
+        <p class="details"></p>
         <div class="stats">
                 <!-- showing stats of participants -->
         </div>
@@ -22,8 +18,8 @@
 <!-- Itineraries -->
 <div class="bs-component">
     <h1 id="typography">Itineraries: </h1>
-    <button class="load-itineraries btn btn-info">Load Itineraries</button>
-    <button class="add-itinerary btn btn-info">Add Itinerary</button>
+    <button class="load-itineraries btn-xs btn-info">Load Itineraries</button>
+    <button class="add-itinerary btn-xs btn-info">Add Itinerary</button>
     <div class="itineraries">
     <!-- to load itinerary handlebar template -->
     </div>
@@ -32,7 +28,7 @@
 <!-- Comments from users -->
 <div class="bs-component">
     <h1 id="typography">Comments: </h1>
-    <button class="load-comments btn btn-info">Load Comments</button>
+    <button class="load-comments btn-xs btn-info">Load Comments</button>
     <div class="comments">
     <!-- to load comments handlebar template -->
     </div>

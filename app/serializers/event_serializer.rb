@@ -1,5 +1,9 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :title, :note, :organizer, :participants, :comments, :itineraries, :stats
+  attributes :id, :title, :note, :user, :organizer, :participants, :comments, :itineraries, :stats
+  
+  def user
+    current_user.id
+  end
 
   def participants
     user_hash = {}
