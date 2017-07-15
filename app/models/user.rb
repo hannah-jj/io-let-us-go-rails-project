@@ -8,11 +8,12 @@ class User < ApplicationRecord
 
   # organized meeting
   has_many :meetings, class_name: 'Event', foreign_key: :organizer_id
-  has_many :itineraries, through: :meetings
+ 
 
   # participating event
   has_many :event_users, class_name: 'Event_User',foreign_key: :participant_id
   has_many :events, through: :event_users
+   has_many :itineraries, through: :events
 
   has_many :comments
 
@@ -25,7 +26,11 @@ class User < ApplicationRecord
   end
 
   def upcoming_itineraries
-    self.itineraries.select { |itin| itin if itin.meet_time > DateTime.now }
+    self.itineraries.select do |itin| 
+      if itin.meet_time > DateTime.now && self.event_users.find_by(event_id: itin.event.id).going == "yes"
+        itin
+      end
+    end
 
   end
 

@@ -1,6 +1,6 @@
 
 
-<legend>Upcoming itineraries for events organized by you: </legend>
+<legend>Upcoming itineraries for events that you have noted going/maybe: </legend>
 <% @itineraries.each do |itinerary| %>
 	<p>Event : <%= itinerary.event.title %></p>
 	<%= render partial: 'itineraries/detail', locals: {itinerary: itinerary } %>
