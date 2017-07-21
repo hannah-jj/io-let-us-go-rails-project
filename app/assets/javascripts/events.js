@@ -136,12 +136,15 @@ Comment.prototype.newComment = function() {
 }
 //add comment on event show page
 function addComment(){
-	let comment = $("#new-comment")[0].value;
+	let comment_input = $("#new-comment")[0]
+	let comment = comment_input.value;
 	let event_id = parseInt($(".js-next").attr("data-id"));
 	let user_id = parseInt($(".event-title").attr("user-id"));
 	let commentData = {comment: { event_id: event_id, note: comment, user_id: user_id }};
 
-	$.post(`/events/${event_id}/comments`, commentData, function(result){
+	$.post(`/events/${event_id}/comments`, commentData, function(result) {
+		comment_input.value = "";
+
 		commentData = result["data"]["attributes"];
 		let id = result["data"]["id"];
 		var comment = new Comment(id, event_id, commentData["email"], commentData["note"]);
