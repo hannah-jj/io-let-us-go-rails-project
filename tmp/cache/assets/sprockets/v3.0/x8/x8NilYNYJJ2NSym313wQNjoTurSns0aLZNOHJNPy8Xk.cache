@@ -1,0 +1,11 @@
+{:uriI"×file:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/stats.hbs?type=text/x-handlebars-template&id=a00694879d57e4fadb65e0a401f603b1369e319b7215c22d59ff07db31954939:ET:load_pathI"app/assets/javascripts;T:filenameI"/app/assets/javascripts/templates/stats.hbs;T:	nameI"templates/stats;T:logical_pathI"templates/stats.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"ß<ul class="nav nav-pills">
+	<li class="btn btn-warning btn-xs">
+	    <button class="btn btn-warning">{{attributes.stats.status}}</button>
+	    <span class="badge"><%= @stats[i][:value]%></span>
+	    <% end %>
+	</li> 
+</ul> ;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"file-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/stats.hbs;TTF:charsetI"
+utf-8;F:digest"%ê×\r_êDžMÈ—ÚGÏzöÈØÊYFRì•#AaVvu:lengthiß:dependencies_digest"%ØZFÐôRh$f®9n:ÐÄÑUoá·x?­­6ÍX:idI"Ea00694879d57e4fadb65e0a401f603b1369e319b7215c22d59ff07db31954939;F:
+mtimel+¢iY
