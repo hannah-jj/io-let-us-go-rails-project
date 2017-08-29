@@ -1,22 +1,29 @@
-<div class="container">
-	<nav class = "navbar">
-		<div class="container-fluid">
-			<div class="bs-component">
-				<ul class="nav nav-pills">
-					<% if user_signed_in? %>
-					  <li><%= link_to "Home", user_path(current_user), :class => "navbar-brand"%></li>
-					  <li><%= link_to "Edit Profile", edit_user_path(current_user), :class => "navbar-brand"%></li>
-					   <li><%= link_to "All Events", events_path, :class => "navbar-brand"%></li>
-					  <li><%= link_to "Add Event", new_event_path, :class => "navbar-brand"%></li>
-					  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete , :class => "navbar-brand"%></li>
-					<% else %>
-						<li><%= link_to "Home", events_path, :class => "navbar-brand"%></li>
-					  <li><%= link_to "Sign in", new_user_session_path, :class => "navbar-brand"%></li>
-					  <li><%= link_to "Sign up", new_user_registration_path, :class => "navbar-brand" %></li>
-					  
-					<% end %>
-				<ul>
+<nav id="mainNav" class = "navbar navbar-default navbar-fixed-top affix">
+	<div class="container-fluid">
+		
+		<% if user_signed_in? %>
+			<div class="navbar-header">
+		  		<%= link_to "Home", user_path(current_user), :class => "navbar-brand"%>
+		  	</div>
+		  	<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+		  		<ul class="nav navbar-nav navbar-right">
+				  <li><%= link_to "Edit Profile", edit_user_path(current_user), :class => "navbar-brand"%></li>
+				   <li><%= link_to "All Events", events_path, :class => "navbar-brand"%></li>
+				  <li><%= link_to "Add Event", new_event_path, :class => "navbar-brand"%></li>
+				  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete , :class => "navbar-brand"%></li>
+				 </ul>
 			</div>
-		</div>
-	</nav>
-</div>
+		<% else %>
+			<div class="navbar-header">
+				<%= link_to "Home", events_path, :class => "navbar-brand"%>
+			</div>
+			<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+				<ul class="nav navbar-nav navbar-right">
+		  			<li><%= link_to "Sign in", new_user_session_path, :class => "navbar-brand"%></li>
+		  			<li><%= link_to "Sign up", new_user_registration_path, :class => "navbar-brand" %></li>
+		  		</ul>
+		  	</div>
+		<% end %>
+	
+	</div>
+</nav>
