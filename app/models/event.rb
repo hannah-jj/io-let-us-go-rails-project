@@ -55,5 +55,9 @@ class Event < ApplicationRecord
     stats
   end
 
+  def userGoing (user)
+    self.event_users.find_by(participant: user).going
+  end
+
 
 end

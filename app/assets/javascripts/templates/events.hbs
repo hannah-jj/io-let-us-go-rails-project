@@ -9,6 +9,9 @@
             		<div class="project-name">
 						<h2>Note: {{attributes.note}}</h2>
 						<h3>Organized by: {{attributes.organizer.email}}</h3>
+						{{#if attributes.going}}
+							<span class="badge">{{attributes.going}}</span>
+						{{/if}}
 					</div>
 				</div>
 			</div>		
