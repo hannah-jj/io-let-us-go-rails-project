@@ -1,11 +1,11 @@
 
 <!-- Event Information -->
-<div class="bs-component" >
-    <div class="jumbotron row" style="background:transparent url('http://i.imgur.com/Fp8Gs55.jpg') no-repeat center center /cover">
-        <h1 class="event-title"  max-id="<%=Event.last.id%>" event="single" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>
-        <button class="js-next btn-xs btn-info" data-id="<%=@event.id%>">Next Event</button>
-        <a href="<%=@event.id%>/edit" class="btn-xs btn-info edit-event">Edit</a>
-        
+<header style="background-image: url('/assets/events/1.jpg')">
+    <div class="header-content">
+        <div class="header-content-inner">
+        <h1 style="font-size: 58.9167px;" class="event-title"  max-id="<%=Event.last.id%>" event="single" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>
+        <button class="js-next btn btn-primary btn-lg" data-id="<%=@event.id%>">Next Event</button>
+        <a href="<%=@event.id%>/edit" class="btn btn-primary btn-lg edit-event">Edit</a>
         <p class="organizer"></p>
         <p class="details"></p>
         <div class="stats">
@@ -13,7 +13,7 @@
         </div>
         
   	</div>
- </div>
+ </header>
 
 <!-- Itineraries -->
 <div class="bs-component">

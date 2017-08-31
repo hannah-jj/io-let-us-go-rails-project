@@ -4,7 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   #user organized meeting
   def meetings
   	object.meetings.map do |meeting|
-  		{id: meeting.id, attributes: {title: meeting.title}}
+  		{id: meeting.id, attributes: {title: meeting.title, note: meeting.note, organizer: {email: meeting.organizer.email}}}
   	end
   end
 

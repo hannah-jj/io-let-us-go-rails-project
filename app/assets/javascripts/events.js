@@ -80,10 +80,10 @@ function displayEvent(data, event_id){
 	for(var i = 0; i < 3; i++){
 		if (stats[i]["status"]==current_user_stat) {
 		//if matching value for stat, make the button normal
-		statsHTML += `<li class="btn btn-warning btn-xs"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		statsHTML += `<li class="btn btn-lg"><button class="btn participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
 		}
 		else {// fade it out
-		statsHTML += `<li class="btn btn-warning btn-xs faded"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		statsHTML += `<li class="btn btn-lg fade"><button class="btn participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
 		}
 	}
 	$(".stats").html(statsHTML);
