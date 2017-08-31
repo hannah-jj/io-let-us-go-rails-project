@@ -239,6 +239,7 @@ header {
         padding: 100px 15px 100px;
         width: 100%;
         .header-content-inner {
+            background-color: rgba($theme-dark, .5);
             h1 {
                 font-weight: 700;
                 text-transform: uppercase;

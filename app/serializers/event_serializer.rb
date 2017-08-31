@@ -1,5 +1,5 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :title, :note, :organizer, :participants, :comments, :itineraries, :stats
+  attributes :id, :title, :note, :image, :organizer, :participants, :comments, :itineraries, :stats
 
   def participants
     user_hash = {}

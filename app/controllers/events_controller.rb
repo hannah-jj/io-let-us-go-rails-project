@@ -75,6 +75,7 @@ class EventsController < ApplicationController
         :title,
         :note,
         :organizer_id,
+        :image,
         :itineraries_attributes => [
         	:id,
         	:note,
