@@ -111,7 +111,7 @@ function loadItineraries(){
 	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
 		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data["data"]});
 		$(".itineraries").html(itinerariesHTML);
-		console.log(data["data"][0].attributes.time)
+		
 	});	
 }
 //redirect to the add itinerary page
