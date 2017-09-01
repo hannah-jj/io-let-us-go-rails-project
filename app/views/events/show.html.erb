@@ -1,4 +1,3 @@
-
 <!-- Event Information -->
 <header style="background-image: url('/assets/events/1.jpg')">
     <div class="header-content">
@@ -15,23 +14,32 @@
   	</div>
  </header>
 
-<!-- Itineraries -->
-<div class="bs-component">
-    <h1 id="typography">Itineraries: </h1>
-    <button class="load-itineraries btn-xs btn-info">Load Itineraries</button>
-    <button class="add-itinerary btn-xs btn-info">Add Itinerary</button>
-    <div class="itineraries">
-    <!-- to load itinerary handlebar template -->
-    </div>
-</div>
+<!-- Itineraries & Comments Tabs -->
+<section class="no-padding">
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a data-toggle="tab" href="#itineraries" aria-controls="itineraries">Itineraries</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#comments" aria-controls="comments">Comments</a></li>
+        </ul>
 
-<!-- Comments from users -->
-<div class="bs-component">
-    <h1 id="typography">Comments: </h1>
-    <button class="load-comments btn-xs btn-info">Load Comments</button>
-    <div class="comments">
-    <!-- to load comments handlebar template -->
+        <div class="tab-content">
+            <div id="itineraries" role="tabpanel" class="load-itineraries tab-pane fade in active">
+                <button class="add-itinerary btn-xs btn-info">Add Itinerary</button>
+                <div class="itineraries">
+                <!-- to load itinerary handlebar template -->
+                </div>
+            </div>
+        
+
+        <!-- Comments from users -->
+            <div id="comments" role="tabpanel" class="load-comments tab-pane fade">
+            <input type="text" id="new-comment">
+            <button class="add-comment btn-xs btn-info">Add Comment</button>
+            <div class="comments">
+            <!-- to load comments handlebar template -->
+            </div>
+        </div>
     </div>
-</div>
+</section>
         
 

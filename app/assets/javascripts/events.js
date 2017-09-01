@@ -3,12 +3,13 @@ function eventsListeners(){
 
 	//load events
 	showEvents(currentID);
+	loadItineraries();
+	loadComments();
 
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
-	$('.load-itineraries').on("click", () => loadItineraries());
 	$('.add-itinerary').on("click", () => addItinerary());
-	$('.load-comments').on("click", () => loadComments());
+	$('.add-comment').on("click", () => addComment());
 	
 }
 
@@ -110,6 +111,7 @@ function loadItineraries(){
 	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
 		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data["data"]});
 		$(".itineraries").html(itinerariesHTML);
+		console.log(data["data"][0].attributes.time)
 	});	
 }
 //redirect to the add itinerary page
@@ -164,7 +166,5 @@ function loadComments(){
 	$.get("/events/" + event_id +"/comments.json", function(data){ 
 		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
 		$(".comments").html(commentsHTML);
-
-		$('.add-comment').on("click", () => addComment());
 	});	
 }
