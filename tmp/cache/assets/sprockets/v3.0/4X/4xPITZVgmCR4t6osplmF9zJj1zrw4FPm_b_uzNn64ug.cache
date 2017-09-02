@@ -1,0 +1,31 @@
+{:uriI"Øfile:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/events.hbs?type=text/x-handlebars-template&id=f68436a7a5eb48fca514794b743640b8014187084fddf10249f444f29e521893:ET:load_pathI"app/assets/javascripts;T:filenameI"0app/assets/javascripts/templates/events.hbs;T:	nameI"templates/events;T:logical_pathI"templates/events.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"Æ{{#if events}}
+	{{#each events}}
+	  <div class="col-lg-4 col-sm-6">
+	  	<a class="portfolio-box" href="/events/{{id}}">
+	  		<h2>{{attributes.title}}</h2>
+            <img src="/assets/events/{{id}}.jpg" class="img-responsive" alt="event picture">
+            <div class="portfolio-box-caption">
+            	<div class="portfolio-box-caption-content">
+            		<div class="project-name">
+						<h2>Note: {{attributes.note}}</h2>
+						<h3>Organized by: {{attributes.organizer.email}}</h3>
+						{{#if attributes.going}}
+							<span class="badge">{{attributes.going}}</span>
+						{{/if}}
+					</div>
+				</div>
+			</div>		
+		</a>
+	   </div>
+	{{/each}}
+{{else}}
+	<div><p>no event yet</p></div>
+{{/if}}
+
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"{file-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/events.hbs;TTF:charsetI"
+utf-8;F:digest"%Ó={Y±ìğ--¨‰<İ3o0{é;/\™òœ G#~TeÙ:lengthiÆ:dependencies_digest"%=oÃ„‚Í!9{#¡g+¼½>
+Œïóì™ÒhM‘:idI"Ef68436a7a5eb48fca514794b743640b8014187084fddf10249f444f29e521893;F:
+mtimel+±^¨Y

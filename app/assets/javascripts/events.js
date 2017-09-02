@@ -3,12 +3,13 @@ function eventsListeners(){
 
 	//load events
 	showEvents(currentID);
+	loadItineraries();
+	loadComments();
 
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
-	$('.load-itineraries').on("click", () => loadItineraries());
 	$('.add-itinerary').on("click", () => addItinerary());
-	$('.load-comments').on("click", () => loadComments());
+	$('.add-comment').on("click", () => addComment());
 	
 }
 
@@ -80,10 +81,10 @@ function displayEvent(data, event_id){
 	for(var i = 0; i < 3; i++){
 		if (stats[i]["status"]==current_user_stat) {
 		//if matching value for stat, make the button normal
-		statsHTML += `<li class="btn btn-warning btn-xs"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		statsHTML += `<li class="btn btn-lg"><button class="btn participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
 		}
 		else {// fade it out
-		statsHTML += `<li class="btn btn-warning btn-xs faded"><button class="btn-warning participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
+		statsHTML += `<li class="btn btn-lg fade"><button class="btn participate">${stats[i]["status"]}</button><span class="badge">${stats[i]["value"]}</span></li>`;
 		}
 	}
 	$(".stats").html(statsHTML);
@@ -110,6 +111,7 @@ function loadItineraries(){
 	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
 		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data["data"]});
 		$(".itineraries").html(itinerariesHTML);
+		
 	});	
 }
 //redirect to the add itinerary page
@@ -164,7 +166,5 @@ function loadComments(){
 	$.get("/events/" + event_id +"/comments.json", function(data){ 
 		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
 		$(".comments").html(commentsHTML);
-
-		$('.add-comment').on("click", () => addComment());
 	});	
 }

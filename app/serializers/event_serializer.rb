@@ -1,5 +1,5 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :title, :note, :organizer, :participants, :comments, :itineraries, :stats
+  attributes :id, :title, :note, :image, :organizer, :participants, :comments, :itineraries, :stats
 
   def participants
     user_hash = {}
@@ -29,7 +29,7 @@ class EventSerializer < ActiveModel::Serializer
         object.itineraries.map do |i|
       {note: i.note, 
         location: i.location,
-        meet_time: i.meet_time
+        time: i.meet_time.strftime("%A, %d %b %Y %l:%M %p")
       }
     end
   end

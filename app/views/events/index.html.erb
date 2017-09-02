@@ -1,14 +1,18 @@
-<div class="bs-component">
-    <div class="jumbotron row" style="background:transparent url('http://i.imgur.com/BY9aYlG.jpg') no-repeat center center /cover">
-        <h1 class="main-title" event-id="all">Events:</h1>
-     
-        <p><%= link_to "Check out the events by popularities", popular_events_path, :class=>"btn btn-lg"%></p>
-   	</div>
-</div>    
+<section class="no-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+	        <h1  style="font-size: 58.9167px;" class="main-title" event-id="all">Events:</h1>
+	        <hr>
+	        <%= link_to "Check out the events by popularities", popular_events_path, :class=>"btn btn-primary btn-sm"%>
+	        </div>
+	   	</div>
+	</div>    
 
-<div class="bs-component">
-    <div class="panel panel-default events-table">
+    <div class="container-fluid">
+    	<div class="row no-gutter events-table">
 	<!-- to display all events-->
+		</div>
 	</div>
-</div>
+</section>
 
