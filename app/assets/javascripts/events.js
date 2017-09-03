@@ -182,5 +182,15 @@ function changeSelect(e){
 	// debugger
 	var image_id = parseInt(t.getAttribute("data-id"));
 	$(".image-select").val(image_id);
-	t.className += "highlight";
+	updateClass(t, "highlight");
+	// t.className += "highlight";
+	// debugger
+}
+
+function updateClass(t, className) {
+	var siblings = $(t).siblings();
+	for (i = 0; i < siblings.length; i++) {
+    	$(siblings[i]).removeClass(className);
+ 	}
+ 	t.className += className;
 }
