@@ -50,8 +50,8 @@ function nextEvent(){
 	$.get("/events/" + nextId +".json", function(data){
 		displayEvent(data, nextId);
 		//clear itineraries and comments from previous event
-		$(".itineraries").html("");
-		$(".comments").html("");
+			loadItineraries();
+			loadComments();
 
 	}).fail(function(){
 		$(".js-next").attr("data-id", nextId); //advance button's id# by 1
@@ -179,12 +179,10 @@ function loadComments(){
 //updated select option in event form accordingly to the image selected
 function changeSelect(e){
 	var t = e.target;
-	// debugger
 	var image_id = parseInt(t.getAttribute("data-id"));
 	$(".image-select").val(image_id);
 	updateClass(t, "highlight");
-	// t.className += "highlight";
-	// debugger
+
 }
 
 function updateClass(t, className) {
