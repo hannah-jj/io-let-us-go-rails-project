@@ -361,6 +361,12 @@ header {
 }
 
 // Bootstrap Overrides
+.event-images img {
+    width: 100px;
+}
+img.highlight {
+    width: 150px;
+}
 .text-primary {
     color: $theme-primary;
 }

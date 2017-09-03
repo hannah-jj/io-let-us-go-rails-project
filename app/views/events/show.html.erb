@@ -1,5 +1,5 @@
 <!-- Event Information -->
-<header style="background-image: url('/assets/events/1.jpg')">
+<header style="background-image: url('https://s3.us-east-2.amazonaws.com/let-us-go/events/<%= @event.image%>.jpg')">
     <div class="header-content">
         <div class="header-content-inner">
         <h1 style="font-size: 58.9167px;" class="event-title"  max-id="<%=Event.last.id%>" event="single" user-id="<%=current_user.id if current_user%>"><%= @event.title.capitalize %></h1>

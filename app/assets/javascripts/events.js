@@ -1,16 +1,18 @@
 function eventsListeners(){
 	var currentID = parseInt($(".js-next").attr("data-id"));
 
-	//load events
+	//load events or event
 	showEvents(currentID);
-	loadItineraries();
-	loadComments();
 
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
 	$('.add-itinerary').on("click", () => addItinerary());
 	$('.add-comment').on("click", () => addComment());
-	
+
+	//event form page
+	$('.event-images').click(function(e){
+		changeSelect(e);
+	}); 
 }
 
 //show all events on idex page or one event on show page
@@ -21,9 +23,14 @@ function showEvents(id){
 			$(".events-table").html(eventsHTML);
 		});	
 	}
+	else if ($(".main-page").attr("event") == "main") {
+
+	} 
 	else {
 		$.get("/events/"+id+".json", function(data){ 
 			displayEvent(data, id);
+			loadItineraries();
+			loadComments();
 		});	
 	}
 }
@@ -167,4 +174,13 @@ function loadComments(){
 		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
 		$(".comments").html(commentsHTML);
 	});	
+}
+
+//updated select option in event form accordingly to the image selected
+function changeSelect(e){
+	var t = e.target;
+	// debugger
+	var image_id = parseInt(t.getAttribute("data-id"));
+	$(".image-select").val(image_id);
+	t.className += "highlight";
 }
