@@ -188,9 +188,10 @@ function changeSelect(e){
 }
 
 function updateClass(t, className) {
+	$(t).removeClass();
 	var siblings = $(t).siblings();
 	for (i = 0; i < siblings.length; i++) {
-    	$(siblings[i]).removeClass(className);
+    	$(siblings[i]).removeClass();
  	}
  	t.className += className;
 }

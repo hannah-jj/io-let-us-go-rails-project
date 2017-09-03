@@ -12,6 +12,7 @@
 
 
 <%= form_for(@event) do |f| %>
+  <p>Select a picture for your event</p>
   <div class="event-images">
     <% (1..10).map do |i| %>
       <img src="https://s3.us-east-2.amazonaws.com/let-us-go/events/<%= i %>.jpg" data-id="<%= i %>" />
