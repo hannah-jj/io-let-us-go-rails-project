@@ -27,7 +27,7 @@ class User < ApplicationRecord
 
   def upcoming_itineraries
     self.itineraries.select do |itin| 
-      if itin.meet_time > DateTime.now && self.event_users.find_by(event_id: itin.event.id).going == "yes"
+      if itin.meet_day >= DateTime.now && self.event_users.find_by(event_id: itin.event.id).going == "yes"
         itin
       end
     end

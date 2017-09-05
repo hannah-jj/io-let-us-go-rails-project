@@ -1,6 +1,6 @@
 class Itinerary < ApplicationRecord
   belongs_to :event
 
-  validates :meet_time, presence: true
+  validates :meet_day, presence: true
   
 end

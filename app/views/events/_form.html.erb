@@ -65,9 +65,16 @@
     </div>
 
     <div class="form-group">
+      <%= itin.label :meet_day, :class=>"col-lg-2 control-label"  %>
+      <div class="col-lg-10">
+      <%= itin.date_select :meet_day, :class=>"form-control"  %><br>
+      </div>
+    </div>
+
+    <div class="form-group">
     <%= itin.label :meet_time, :class=>"col-lg-2 control-label"  %>
       <div class="col-lg-10">
-      <%= itin.datetime_select :meet_time, :class=>"form-control"  %><br>
+      <%= itin.time_select :meet_time, :class=>"form-control"  %><br>
       </div>
     </div>
 

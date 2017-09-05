@@ -4,7 +4,7 @@
 	<blockquote>
 	<p><strong>note: </strong><%= link_to itinerary.note, itinerary_path(itinerary)%></p>
 	<p><strong>location: </strong><%= itinerary.location%></p>
- 	<p><strong>time: </strong><%= itinerary.meet_time.to_time.strftime('%m/%d/%Y at %I:%M%p') %></p>
+ 	<p><strong>time: </strong><%= itinerary.meet_day.to_time.strftime('%m/%d/%Y')%> <%= itinerary.meet_time.to_time.strftime(' at %I:%M%p') %></p>
 	
 	<% if !current_user.nil? %>
 		<%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %>

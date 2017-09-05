@@ -18,8 +18,11 @@
       <div class="field"> <%= f.label :location %><br>
       <%= f.text_area :location %></div>
 
+      <div class="field"> <%= f.label :meet_day %><br>
+      <%= f.date_select :meet_day, :min => Date.today.year%></div>
+
       <div class="field"> <%= f.label :meet_time %><br>
-      <%= f.datetime_select :meet_time, :min => Date.today.year%></div>
+      <%= f.time_select :meet_time, :min => Date.today.year%></div>
 
 
       <div class="actions">

@@ -81,6 +81,7 @@ class EventsController < ApplicationController
         	:note,
         	:location,
         	:meet_time,
+        	:meet_day
         ]
       )
     end

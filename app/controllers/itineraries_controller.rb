@@ -9,7 +9,7 @@ class ItinerariesController < ApplicationController
 				redirect_to events_path, :alert => "Event not found"
 			else
 				@itineraries = @event.itineraries
-				@sorted = @itineraries.sort_by {|i| i.meet_time}
+				@sorted = @itineraries.sort_by {|i| i.meet_day}
 			end
 		else
 			redirect_to events_path, :alert => "Access Denied"
@@ -88,7 +88,8 @@ class ItinerariesController < ApplicationController
 	    :event_id,
 	    :note,
 	    :location,
-	    :meet_time
+	    :meet_time,
+	    :meet_day
 	  	)
     end
 end

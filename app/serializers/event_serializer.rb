@@ -29,7 +29,8 @@ class EventSerializer < ActiveModel::Serializer
         object.itineraries.map do |i|
       {note: i.note, 
         location: i.location,
-        time: i.meet_time.strftime("%A, %d %b %Y %l:%M %p")
+        day: i.meet_day.strftime("%A, %d %b %Y"),
+        time: i.meet_time.strftime("%l:%M %p")
       }
     end
   end
