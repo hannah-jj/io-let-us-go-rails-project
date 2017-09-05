@@ -8,15 +8,15 @@ class ItinerariesController < ApplicationController
 			if @event == nil
 				redirect_to events_path, :alert => "Event not found"
 			else
-				@itineraries = @event.itineraries
-				@sorted = @itineraries.sort_by {|i| i.meet_day}
+				@itineraries = @event.itineraries.sort_by {|i| [i.meet_day, i.meet_time]}
+				
 			end
 		else
 			redirect_to events_path, :alert => "Access Denied"
 		end
 		respond_to do |f|
 	      f.html { render :index }
-	      f.json { render json: @sorted }
+	      f.json { render json: @itineraries }
 	    end
 	end
 
