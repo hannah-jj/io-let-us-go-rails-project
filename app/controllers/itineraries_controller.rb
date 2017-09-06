@@ -8,8 +8,7 @@ class ItinerariesController < ApplicationController
 			if @event == nil
 				redirect_to events_path, :alert => "Event not found"
 			else
-				@itineraries = @event.itineraries.sort_by {|i| [i.meet_day, i.meet_time.strftime('%H:%M')]}
-				
+				@itineraries = @event.compileTimeLine(@event.itineraries)
 			end
 		else
 			redirect_to events_path, :alert => "Access Denied"
