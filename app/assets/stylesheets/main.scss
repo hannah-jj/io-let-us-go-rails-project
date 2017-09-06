@@ -1,8 +1,7 @@
 @charset "utf-8";
 // variables.less
-$theme-primary: #336E7B;
-$theme-event: #C5EFF7;
-$theme-dark: #222;
+$theme-primary: #E29587;
+$theme-dark: #20002c;
 
 @mixin transition-all()
 {
@@ -221,9 +220,7 @@ aside {
 }
 
 // Homepage Header
-
-//background-image: url('http://i.imgur.com/SSzZRGU.jpg');
-
+//background-color: rgba($theme-dark, .3);
 header {
     position: relative;
     width: 100%;
@@ -239,7 +236,9 @@ header {
         padding: 100px 15px 100px;
         width: 100%;
         .header-content-inner {
-            background-color: rgba($theme-dark, .5);
+
+            background: linear-gradient(to right, rgba(167, 112, 239, 0.3), rgba(207, 139, 243, 0.3), rgba(253, 185, 155, 0.3));
+            
             h1 {
                 font-weight: 700;
                 text-transform: uppercase;
@@ -307,7 +306,7 @@ header {
         color: white;
         opacity: 0;
         display: block;
-        background: rgba( $theme-event, .9 );
+        background: linear-gradient(to right, rgba(58, 28, 113, 0.7), rgba(215, 109, 119, 0.7), rgba(255, 175, 123, 0.7));
         position: absolute;
         bottom: 0;
         text-align: center;
