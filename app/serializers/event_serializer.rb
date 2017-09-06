@@ -19,8 +19,11 @@ class EventSerializer < ActiveModel::Serializer
 
   def comments
     object.comments.map do |c|
-      {email: c.user.email, 
-        note: c.note
+      {
+        id: c.id,
+        email: c.user.email, 
+        note: c.note,
+        created_at: c.created_at.strftime('%m/%d/%Y, %I:%M%p')
       }
     end
   end

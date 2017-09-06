@@ -29,8 +29,8 @@ function showEvents(id){
 	else {
 		$.get("/events/"+id+".json", function(data){ 
 			displayEvent(data, id);
-			loadItineraries();
-			loadComments();
+			loadItineraries(data.data.attributes.itineraries);
+			loadComments(data.data.attributes.comments);
 		});	
 	}
 }
@@ -52,7 +52,7 @@ function nextEvent(){
 	$.get("/events/" + nextId +".json", function(data){
 		displayEvent(data, nextId);
 		//clear itineraries and comments from previous event
-			loadItineraries();
+			loadItineraries(data.data.attributes.itineraries);
 			loadComments();
 
 	}).fail(function(){
@@ -115,13 +115,9 @@ function statUpdate(e, event_id){
 
 //itineraries section for Event show page
 //load Itineraries
-function loadItineraries(){
-	var event_id = parseInt($(".js-next").attr("data-id"));
-	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
-		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data});
-		$(".itineraries").html(itinerariesHTML);
-		
-	});	
+function loadItineraries(data){
+	var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data});
+	$(".itineraries").html(itinerariesHTML);
 }
 //redirect to the add itinerary page
 function addItinerary(){
@@ -172,12 +168,10 @@ function addComment(){
 }
 
 //load comments on event show page
-function loadComments(){
-	var event_id = parseInt($(".js-next").attr("data-id"));
-	$.get("/events/" + event_id +"/comments.json", function(data){ 
-		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
-		$(".comments").html(commentsHTML);
-	});	
+function loadComments(data){
+	var commentsHTML = HandlebarsTemplates['comments']({comments : data})
+	$(".comments").html(commentsHTML);
+
 }
 
 //updated select option in event form accordingly to the image selected
