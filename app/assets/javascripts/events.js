@@ -137,9 +137,11 @@ function Comment(id, event_id, email, comment){
 }
 // prototype function for Comment Object
 Comment.prototype.newComment = function() {
+	var currentdate = new Date();
 	return (`<tr class="info">
 			<td>${this.comment}</td>
 			<td>${this.email}</td>
+			<td>${currentdate.toLocaleString()}</td>
 			<td align="right"><a class="btn-info" href="/events/${this.event_id}/comments/${this.id}">view</td></tr>
 		`);
 }

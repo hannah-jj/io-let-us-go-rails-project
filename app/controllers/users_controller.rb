@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 	before_action :user_autho, only: [:edit, :update, :upcoming]
 
 	def update
+		params[:user].delete(:password) if params[:user][:password].blank?
 		if @user.update(user_params)
 			redirect_to user_path(@user), notice: 'Profile was successfully updated'
 		else
