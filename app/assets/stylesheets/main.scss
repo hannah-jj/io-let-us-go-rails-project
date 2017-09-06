@@ -400,6 +400,21 @@ img.highlight {
     padding: 15px 30px;
 }
 
+.actionbutton {
+  position: relative;
+  background: $theme-primary;
+  width: 50px;
+  height: 50px;
+  font-size: 4em;
+  font-weight: 400;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 8px #202020;
+}
+
 // Contact
 #contact .fa {
     color: $theme-dark;
