@@ -6575,43 +6575,43 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-/* line 74, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 73, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 html,
 body {
   height: 100%;
   width: 100%;
 }
 
-/* line 80, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 79, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* line 84, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 83, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 hr {
-  border-color: #336E7B;
+  border-color: #E29587;
   border-width: 3px;
   max-width: 50px;
 }
 
-/* line 90, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 89, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 hr.light {
   border-color: white;
 }
 
-/* line 94, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 93, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #336E7B;
+  color: #E29587;
 }
-/* line 97, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 96, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 a:hover, a:focus {
-  color: #244e57;
+  color: #d8715e;
 }
 
-/* line 103, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 102, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 h1,
 h2,
 h3,
@@ -6621,139 +6621,139 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* line 112, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 111, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-/* line 118, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 117, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .bg-primary {
-  background-color: #336E7B;
+  background-color: #E29587;
 }
 
-/* line 122, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 121, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .bg-dark {
-  background-color: #222;
+  background-color: #20002c;
   color: white;
 }
 
-/* line 127, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 126, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 131, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 130, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 section {
   padding: 100px 0;
 }
 
-/* line 135, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 134, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 aside {
   padding: 50px 0;
 }
 
-/* line 139, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 138, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .no-padding {
   padding: 0;
 }
 
-/* line 145, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 144, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default {
   background-color: white;
-  border-color: rgba(34, 34, 34, 0.5);
+  border-color: rgba(32, 0, 44, 0.5);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
-/* line 150, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 149, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default .navbar-header .navbar-brand {
-  color: #336E7B;
+  color: #E29587;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 155, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 154, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default .navbar-header .navbar-brand:hover, .navbar-default .navbar-header .navbar-brand:focus {
-  color: #244e57;
+  color: #d8715e;
 }
-/* line 162, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 161, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default .nav > li > a,
 .navbar-default .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 13px;
-  color: #222;
+  color: #20002c;
 }
-/* line 168, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 167, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
-  color: #336E7B;
+  color: #E29587;
 }
-/* line 173, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 172, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #336E7B !important;
+  color: #E29587 !important;
   background-color: transparent;
 }
-/* line 177, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 176, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .navbar-default .nav > li.active > a:hover,
 .navbar-default .nav > li.active > a:focus:hover {
   background-color: transparent;
 }
 @media (min-width: 768px) {
-  /* line 145, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 144, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default {
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.3);
   }
-  /* line 187, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 186, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default .navbar-header .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 189, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 188, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default .navbar-header .navbar-brand:hover, .navbar-default .navbar-header .navbar-brand:focus {
     color: white;
   }
-  /* line 194, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 193, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default .nav > li > a,
   .navbar-default .nav > li > a:focus {
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 197, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 196, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default .nav > li > a:hover,
   .navbar-default .nav > li > a:focus:hover {
     color: white;
   }
-  /* line 201, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 200, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default.affix {
     background-color: white;
-    border-color: rgba(34, 34, 34, 0.5);
+    border-color: rgba(32, 0, 44, 0.5);
   }
-  /* line 204, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 203, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default.affix .navbar-header .navbar-brand {
-    color: #336E7B;
+    color: #E29587;
     font-size: 14px;
   }
-  /* line 207, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 206, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default.affix .navbar-header .navbar-brand:hover, .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #244e57;
+    color: #d8715e;
   }
-  /* line 212, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 211, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default.affix .nav > li > a,
   .navbar-default.affix .nav > li > a:focus {
-    color: #222;
+    color: #20002c;
   }
-  /* line 215, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 214, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .navbar-default.affix .nav > li > a:hover,
   .navbar-default.affix .nav > li > a:focus:hover {
-    color: #336E7B;
+    color: #E29587;
   }
 }
 
-/* line 227, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 224, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 header {
   position: relative;
   width: 100%;
@@ -6766,29 +6766,29 @@ header {
   text-align: center;
   color: white;
 }
-/* line 236, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 233, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 header .header-content {
   position: relative;
   text-align: center;
   padding: 100px 15px 100px;
   width: 100%;
 }
-/* line 241, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 238, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 header .header-content .header-content-inner {
-  background-color: rgba(34, 34, 34, 0.5);
+  background: linear-gradient(to right, rgba(167, 112, 239, 0.3), rgba(207, 139, 243, 0.3), rgba(253, 185, 155, 0.3));
 }
-/* line 243, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 242, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 header .header-content .header-content-inner h1 {
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 249, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 248, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 header .header-content .header-content-inner hr {
   margin: 30px auto;
 }
-/* line 252, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 251, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 header .header-content .header-content-inner p {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
@@ -6796,11 +6796,11 @@ header .header-content .header-content-inner p {
   margin-bottom: 50px;
 }
 @media (min-width: 768px) {
-  /* line 227, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 224, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   header {
     min-height: 100%;
   }
-  /* line 262, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 261, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   header .header-content {
     position: absolute;
     top: 50%;
@@ -6809,13 +6809,13 @@ header .header-content .header-content-inner p {
     transform: translateY(-50%);
     padding: 0 50px;
   }
-  /* line 269, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 268, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   header .header-content .header-content-inner {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 273, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 272, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   header .header-content .header-content-inner p {
     font-size: 18px;
     max-width: 80%;
@@ -6824,40 +6824,40 @@ header .header-content .header-content-inner p {
   }
 }
 
-/* line 286, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 285, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .section-heading {
   margin-top: 0;
 }
 
-/* line 290, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 289, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .service-box {
   max-width: 400px;
   margin: 50px auto 0;
 }
 @media (min-width: 992px) {
-  /* line 290, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 289, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .service-box {
     margin: 20px auto 0;
   }
 }
-/* line 296, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 295, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .service-box p {
   margin-bottom: 0;
 }
 
-/* line 301, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 300, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box {
   position: relative;
   display: block;
   max-width: 650px;
   margin: 0 auto;
 }
-/* line 306, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 305, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box .portfolio-box-caption {
   color: white;
   opacity: 0;
   display: block;
-  background: rgba(197, 239, 247, 0.9);
+  background: linear-gradient(to right, rgba(58, 28, 113, 0.7), rgba(215, 109, 119, 0.7), rgba(255, 175, 123, 0.7));
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -6867,7 +6867,7 @@ header .header-content .header-content-inner p {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
-/* line 317, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 316, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
   width: 100%;
   text-align: center;
@@ -6875,124 +6875,124 @@ header .header-content .header-content-inner p {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 323, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 322, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   padding: 0 15px;
 }
-/* line 328, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 327, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
 }
-/* line 333, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 332, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   font-size: 18px;
 }
-/* line 339, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 338, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
 @media (min-width: 768px) {
-  /* line 346, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 345, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
     font-size: 16px;
   }
-  /* line 349, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+  /* line 348, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     font-size: 22px;
   }
 }
 
-/* line 358, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 357, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .call-to-action h2 {
   margin: 0 auto 20px;
 }
 
-/* line 364, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 363, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .event-images img {
   width: 100px;
 }
 
-/* line 367, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 366, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 img.highlight {
   width: 150px;
 }
 
-/* line 370, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 369, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .text-primary {
-  color: #336E7B;
+  color: #E29587;
 }
 
-/* line 374, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 373, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .no-gutter > [class*='col-'] {
   padding-right: 0;
   padding-left: 0;
 }
 
-/* line 380, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 379, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-default {
-  color: #222;
+  color: #20002c;
   background-color: white;
   border-color: white;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
-/* line 29, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 28, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle .btn-default {
-  color: #222;
+  color: #20002c;
   background-color: #f2f2f2;
   border-color: #ededed;
 }
-/* line 39, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 38, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-default:active, .btn-default.active, .open > .dropdown-toggle .btn-default {
   background-image: none;
 }
-/* line 47, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 46, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
   background-color: white;
   border-color: white;
 }
-/* line 58, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 57, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-default .badge {
   color: white;
-  background-color: #222;
+  background-color: #20002c;
 }
 
-/* line 384, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 383, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-primary {
   color: white;
-  background-color: #336E7B;
-  border-color: #336E7B;
+  background-color: #E29587;
+  border-color: #E29587;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
-/* line 29, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 28, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle .btn-primary {
   color: white;
-  background-color: #2c5e69;
-  border-color: #295762;
+  background-color: #dd8372;
+  border-color: #db7c6a;
 }
-/* line 39, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 38, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle .btn-primary {
   background-image: none;
 }
-/* line 47, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 46, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-  background-color: #336E7B;
-  border-color: #336E7B;
+  background-color: #E29587;
+  border-color: #E29587;
 }
-/* line 58, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 57, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-primary .badge {
-  color: #336E7B;
+  color: #E29587;
   background-color: white;
 }
 
-/* line 388, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 387, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: none;
@@ -7001,46 +7001,46 @@ img.highlight {
   text-transform: uppercase;
 }
 
-/* line 396, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 395, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 .btn-xl {
   padding: 15px 30px;
 }
 
-/* line 401, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 400, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 #contact .fa {
-  color: #222;
+  color: #20002c;
   font-size: 4em;
 }
 
-/* line 408, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 407, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #222;
+  background: #20002c;
 }
 
-/* line 414, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 413, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 ::selection {
   color: white;
   text-shadow: none;
-  background: #222;
+  background: #20002c;
 }
 
-/* line 420, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 419, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 img::selection {
   color: white;
   background: transparent;
 }
 
-/* line 425, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 424, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 img::-moz-selection {
   color: white;
   background: transparent;
 }
 
-/* line 430, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
+/* line 429, /Users/huijiang/Desktop/Ruby Sandbox/io-let-us-go-rails-project/app/assets/stylesheets/main.scss */
 body {
-  -webkit-tap-highlight-color: #222;
+  -webkit-tap-highlight-color: #20002c;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

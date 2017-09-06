@@ -16904,11 +16904,9 @@ return /******/ (function(modules) { // webpackBootstrap
 },"2":function(container,depth0,helpers,partials,data) {
     var stack1, helper;
 
-  return "	  <div class=\"col-lg-4 col-sm-6\">\n	  	<a class=\"portfolio-box\" href=\"/events/"
-    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\">\n	  		<h2>"
+  return "	  <div class=\"col-lg-4 col-sm-6\">\n	  	<h3>"
     + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.title : stack1), depth0))
-    + "</h2>\n            <img src=\"https://s3.us-east-2.amazonaws.com/let-us-go/events/"
+    + "</h3>\n	  	<div class=\"portfolio-box\">\n            <img src=\"https://s3.us-east-2.amazonaws.com/let-us-go/events/"
     + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.image : stack1), depth0))
     + ".jpg\" class=\"img-responsive\" alt=\"event picture\">\n            <div class=\"portfolio-box-caption\">\n            	<div class=\"portfolio-box-caption-content\">\n            		<div class=\"project-name\">\n						<h2>Note: "
     + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.note : stack1), depth0))
@@ -16916,11 +16914,13 @@ return /******/ (function(modules) { // webpackBootstrap
     + container.escapeExpression(container.lambda(((stack1 = ((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.organizer : stack1)) != null ? stack1.email : stack1), depth0))
     + "</h3>\n"
     + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.going : stack1),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "					</div>\n				</div>\n			</div>		\n		</a>\n	   </div>\n";
+    + "					</div>\n					<a href=\"/events/"
+    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" class=\"btn btn-primary btn-small\">View</a>\n				</div>\n			</div>		\n		</div>\n	   </div>\n";
 },"3":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "							<span class=\"badge\">"
+  return "							<span class=\"btn btn-primary btn-small\">"
     + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.going : stack1), depth0))
     + "</span>\n";
 },"5":function(container,depth0,helpers,partials,data) {
