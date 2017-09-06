@@ -1,17 +1,26 @@
-<table class="table table-striped table-hover">
-	<tbody class="itineraries-table">
+<div class="timeline">
+	<ul>
 		{{#if itineraries}}
 			{{#each itineraries}}
-			  <tr class="info">
-			    <td>{{attributes.note}}</td>
-			    <td>{{attributes.location}}</td>
-			    <td>{{attributes.time}}</td>
-			    <td align="right"><a class="btn-info" itin={{id}} href="/events/{{attributes.event-id}}/itineraries/{{id}}">view</td>
-			  </tr>
+			<li>
+				<div class="dateline">{{date}}</div>
+				<div class="bullet primary"></div>
+			<li>
+			  {{#each data}}
+			  	<li>
+					<div class="bullet secondary"></div>
+					<div class="time">{{meet_time}}</div>
+					<div class="desc">
+						<h3>{{note}}</h3>
+						<h4>@ {{location}}</h4>
+					</div>
+					</li>
+			  {{/each}}
 			{{/each}}
 		{{else}}
-			<tr class="no-comment"><td>no itineraries yet</td></tr>
+			no itineraries yet
 		{{/if}}
-	</tbody>
-</table>
+	</ul>
+</div>
+
 

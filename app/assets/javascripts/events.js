@@ -118,7 +118,7 @@ function statUpdate(e, event_id){
 function loadItineraries(){
 	var event_id = parseInt($(".js-next").attr("data-id"));
 	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
-		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data["data"]});
+		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data});
 		$(".itineraries").html(itinerariesHTML);
 		
 	});	

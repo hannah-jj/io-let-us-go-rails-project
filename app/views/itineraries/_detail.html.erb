@@ -8,10 +8,10 @@
 <% dateline[:data].each do |itinerary| %>
 	<li>
 	<div class="bullet secondary"></div>
-	<div class="time"><%= itinerary.meet_time.to_time.strftime('%I:%M%p') %></div>
+	<div class="time"><%= itinerary[:meet_time] %></div>
 	<div class="desc">
-		<h3><%= itinerary.note %></h3>
-		<h4><%= itinerary.location %></h4>
+		<h3><%= itinerary[:note] %></h3>
+		<h4>@<%= itinerary[:location] %></h4>
 	</div>
 	</li>
 <% end %>

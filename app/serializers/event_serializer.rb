@@ -26,13 +26,7 @@ class EventSerializer < ActiveModel::Serializer
   end
 
   def itineraries
-        object.itineraries.map do |i|
-      {note: i.note, 
-        location: i.location,
-        day: i.meet_day.strftime("%A, %d %b %Y"),
-        time: i.meet_time.strftime("%l:%M %p")
-      }
-    end
+      object.compileTimeLine(object.itineraries)
   end
 
 

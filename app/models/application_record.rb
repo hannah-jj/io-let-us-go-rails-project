@@ -12,11 +12,17 @@ class ApplicationRecord < ActiveRecord::Base
   	result = []
   	dateHash = {date: "", data: []}
   	for i in 0...sortedArray.length do
+      data = {"id": sortedArray[i].id,
+              "note": sortedArray[i].note,
+              "location": sortedArray[i].location,
+              "meet_time": sortedArray[i].meet_time.to_time.strftime('%I:%M%p'),
+      }
+      
   		if i == 0 || result[-1][:date] != sortedArray[i].meet_day
-  			dateHash = {:date => sortedArray[i].meet_day, :data => [sortedArray[i]]}
+  			dateHash = {:date => sortedArray[i].meet_day, :data => [data]}
   			result.push(dateHash)
   		else
-  			result[-1][:data].push(sortedArray[i])
+  			result[-1][:data].push(data)
   		end
   	end
   	return result
