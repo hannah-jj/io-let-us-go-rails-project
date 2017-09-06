@@ -1,10 +1,18 @@
-<p><%= link_to "Back To The Event ", event_path(@event) %>|
-	<%= link_to " Add Itinerary", new_event_itinerary_path(@event, @itinerary) %>
-</p>
+<section class="no-padding">
+    <div class="container">
+		<p><%= link_to "Back To The Event ", event_path(@event) %>|
+			<%= link_to " Add Itinerary", new_event_itinerary_path(@event, @itinerary) %>
+		</p>
 
-<legend>Event: <%= @event.title %></legend>
-<h4> Itineraries </h4>
+		<legend>Event: <%= @event.title %></legend>
+		<h4> Itineraries </h4>
 
-<% @itineraries.each do |itinerary| %>
-	<%= render partial: 'detail', locals: {itinerary: itinerary } %>
-<% end %>
+		<div class="timeline">
+			<ul>
+				<% @itineraries.each do |dateline| %>
+					<%= render partial: 'detail', locals: {dateline: dateline } %>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</section>

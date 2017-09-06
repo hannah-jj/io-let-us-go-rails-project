@@ -32,10 +32,8 @@ class ItinerariesController < ApplicationController
 			@itinerary = Itinerary.find(params[:id])
 			@event = @itinerary.event
 		end
-		respond_to do |f|
-	      f.html { render :show }
-	      f.json { render json: @itinerary }
-	    end
+	    render json: @itinerary
+	   
 	end
 
 	def new

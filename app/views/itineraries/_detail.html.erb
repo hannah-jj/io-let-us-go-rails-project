@@ -1,18 +1,19 @@
 <!-- shows detail of each itineraries -->
-<div class="bs-component">
-	<div class="well well-sm">
-	<blockquote>
-	<p><strong>note: </strong><%= link_to itinerary.note, itinerary_path(itinerary)%></p>
-	<p><strong>location: </strong><%= itinerary.location%></p>
- 	<p><strong>time: </strong><%= itinerary.meet_day.to_time.strftime('%m/%d/%Y')%> <%= itinerary.meet_time.to_time.strftime(' at %I:%M%p') %></p>
+<li>
+	<div class="dateline"><%= dateline[:date] %></div>
+	<div class="bullet primary"></div>
 	
-	<% if !current_user.nil? %>
-		<%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get" %>
-
-
-		<%= button_to "Delete", itinerary, :method => "delete" %>
-	<% end %>
-	
-	</blockquote>
+<li>
+		
+<% dateline[:data].each do |itinerary| %>
+	<li>
+	<div class="bullet secondary"></div>
+	<div class="time"><%= itinerary.meet_time.to_time.strftime('%I:%M%p') %></div>
+	<div class="desc">
+		<h3><%= itinerary.note %></h3>
+		<h4><%= itinerary.location %></h4>
 	</div>
-</div>
+	</li>
+<% end %>
+	
+
