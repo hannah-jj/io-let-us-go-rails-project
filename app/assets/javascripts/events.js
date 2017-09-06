@@ -43,6 +43,8 @@ function nextEvent(){
 	if (currentID >= maxID) {//at last event 
 		currentID = 0; //reset to first event
 		$(".alert-success").html("reached last event, reverting to first event")
+	} else {
+		$(".alert-success").html("");
 	}
 	
 	let nextId = currentID + 1;
