@@ -16871,19 +16871,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
   return ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.comments : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
 },"2":function(container,depth0,helpers,partials,data) {
-    var stack1, helper;
+    var helper;
 
-  return "			  <tr class=\"info\">\n			    <td>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.note : stack1), depth0))
+  return "			  <tr class=\"primary\">\n			    <td>"
+    + container.escapeExpression(((helper = (helper = helpers.note || (depth0 != null ? depth0.note : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"note","hash":{},"data":data}) : helper)))
     + "</td>\n			    <td>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.email : stack1), depth0))
+    + container.escapeExpression(((helper = (helper = helpers.email || (depth0 != null ? depth0.email : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"email","hash":{},"data":data}) : helper)))
     + "</td>\n			    <td>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1["created-at"] : stack1), depth0))
-    + "</td>\n			    <td align=\"right\"><a class=\"btn-info\" href=\"/events/"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1["event-id"] : stack1), depth0))
-    + "/comments/"
-    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\">view</td>\n			  </tr>\n";
+    + container.escapeExpression(((helper = (helper = helpers["created-at"] || (depth0 != null ? depth0["created-at"] : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"created-at","hash":{},"data":data}) : helper)))
+    + "</td>\n			  </tr>\n";
 },"4":function(container,depth0,helpers,partials,data) {
     return "			<tr class=\"no-comment\"><td>no comments yet</td></tr>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -16942,27 +16938,28 @@ return /******/ (function(modules) { // webpackBootstrap
 },"2":function(container,depth0,helpers,partials,data) {
     var stack1, helper;
 
-  return "			  <tr class=\"info\">\n			    <td>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.note : stack1), depth0))
-    + "</td>\n			    <td>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.location : stack1), depth0))
-    + "</td>\n			    <td>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.time : stack1), depth0))
-    + "</td>\n			    <td align=\"right\"><a class=\"btn-info\" itin="
-    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + " href=\"/events/"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1["event-id"] : stack1), depth0))
-    + "/itineraries/"
-    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\">view</td>\n			  </tr>\n";
-},"4":function(container,depth0,helpers,partials,data) {
-    return "			<tr class=\"no-comment\"><td>no itineraries yet</td></tr>\n";
+  return "			<li>\n				<div class=\"dateline\">"
+    + container.escapeExpression(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"date","hash":{},"data":data}) : helper)))
+    + "</div>\n				<div class=\"bullet primary\"></div>\n			<li>\n"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.data : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
+},"3":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "			  	<li>\n					<div class=\"bullet secondary\"></div>\n					<div class=\"time\">"
+    + container.escapeExpression(((helper = (helper = helpers["meet-time"] || (depth0 != null ? depth0["meet-time"] : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"meet-time","hash":{},"data":data}) : helper)))
+    + "</div>\n					<div class=\"desc\">\n						<h3>"
+    + container.escapeExpression(((helper = (helper = helpers.note || (depth0 != null ? depth0.note : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"note","hash":{},"data":data}) : helper)))
+    + "</h3>\n						<h4>@ "
+    + container.escapeExpression(((helper = (helper = helpers.location || (depth0 != null ? depth0.location : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"location","hash":{},"data":data}) : helper)))
+    + "</h4>\n					</div>\n					</li>\n";
+},"5":function(container,depth0,helpers,partials,data) {
+    return "			no itineraries yet\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<table class=\"table table-striped table-hover\">\n	<tbody class=\"itineraries-table\">\n"
-    + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.itineraries : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
-    + "	</tbody>\n</table>\n";
+  return "<div class=\"timeline\">\n	<ul>\n"
+    + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.itineraries : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(5, data, 0),"data":data})) != null ? stack1 : "")
+    + "	</ul>\n</div>\n\n";
 },"useData":true});
   return this.HandlebarsTemplates["itineraries"];
 }).call(this);
@@ -17597,7 +17594,8 @@ function eventsListeners(){
 
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
-	$('.add-itinerary').on("click", () => addItinerary());
+	$('.view-itineraries').on("click", () => viewItineraries());
+	$('.view-comments').on("click", () => viewComments());
 	$('.add-comment').on("click", () => addComment());
 
 	//event form page
@@ -17620,8 +17618,8 @@ function showEvents(id){
 	else {
 		$.get("/events/"+id+".json", function(data){ 
 			displayEvent(data, id);
-			loadItineraries();
-			loadComments();
+			loadItineraries(data.data.attributes.itineraries);
+			loadComments(data.data.attributes.comments);
 		});	
 	}
 }
@@ -17634,6 +17632,8 @@ function nextEvent(){
 	if (currentID >= maxID) {//at last event 
 		currentID = 0; //reset to first event
 		$(".alert-success").html("reached last event, reverting to first event")
+	} else {
+		$(".alert-success").html("");
 	}
 	
 	let nextId = currentID + 1;
@@ -17641,8 +17641,8 @@ function nextEvent(){
 	$.get("/events/" + nextId +".json", function(data){
 		displayEvent(data, nextId);
 		//clear itineraries and comments from previous event
-			loadItineraries();
-			loadComments();
+			loadItineraries(data.data.attributes.itineraries);
+			loadComments(data.data.attributes.comments);
 
 	}).fail(function(){
 		$(".js-next").attr("data-id", nextId); //advance button's id# by 1
@@ -17704,18 +17704,18 @@ function statUpdate(e, event_id){
 
 //itineraries section for Event show page
 //load Itineraries
-function loadItineraries(){
-	var event_id = parseInt($(".js-next").attr("data-id"));
-	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
-		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data["data"]});
-		$(".itineraries").html(itinerariesHTML);
-		
-	});	
+function loadItineraries(data){
+	var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data});
+	$(".itineraries").html(itinerariesHTML);
 }
-//redirect to the add itinerary page
-function addItinerary(){
+//redirect to the view itineraries page
+function viewItineraries(){
 	let event_id = parseInt($(".js-next").attr("data-id"));
-	window.location.href = `/events/${event_id}/itineraries/new`;
+	window.location.href = `/events/${event_id}/itineraries`;
+}
+function viewComments(){
+	let event_id = parseInt($(".js-next").attr("data-id"));
+	window.location.href = `/events/${event_id}/comments`;
 }
 // comments section for Event show page
 
@@ -17728,9 +17728,11 @@ function Comment(id, event_id, email, comment){
 }
 // prototype function for Comment Object
 Comment.prototype.newComment = function() {
+	var currentdate = new Date();
 	return (`<tr class="info">
 			<td>${this.comment}</td>
 			<td>${this.email}</td>
+			<td>${currentdate.toLocaleString()}</td>
 			<td align="right"><a class="btn-info" href="/events/${this.event_id}/comments/${this.id}">view</td></tr>
 		`);
 }
@@ -17759,12 +17761,10 @@ function addComment(){
 }
 
 //load comments on event show page
-function loadComments(){
-	var event_id = parseInt($(".js-next").attr("data-id"));
-	$.get("/events/" + event_id +"/comments.json", function(data){ 
-		var commentsHTML = HandlebarsTemplates['comments']({comments : data["data"]})
-		$(".comments").html(commentsHTML);
-	});	
+function loadComments(data){
+	var commentsHTML = HandlebarsTemplates['comments']({comments : data})
+	$(".comments").html(commentsHTML);
+
 }
 
 //updated select option in event form accordingly to the image selected

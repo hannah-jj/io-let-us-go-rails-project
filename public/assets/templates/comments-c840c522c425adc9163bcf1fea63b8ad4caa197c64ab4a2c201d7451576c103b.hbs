@@ -1,0 +1,16 @@
+<table class="table table-striped table-hover">
+	<tbody class="comments-table">
+		{{#if comments}}
+			{{#each comments}}
+			  <tr class="primary">
+			    <td>{{note}}</td>
+			    <td>{{email}}</td>
+			    <td>{{created-at}}</td>
+			  </tr>
+			{{/each}}
+		{{else}}
+			<tr class="no-comment"><td>no comments yet</td></tr>
+		{{/if}}
+	</tbody>
+</table>
+
