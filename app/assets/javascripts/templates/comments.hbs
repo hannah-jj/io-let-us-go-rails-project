@@ -2,11 +2,10 @@
 	<tbody class="comments-table">
 		{{#if comments}}
 			{{#each comments}}
-			  <tr class="info">
+			  <tr class="primary">
 			    <td>{{note}}</td>
 			    <td>{{email}}</td>
 			    <td>{{created-at}}</td>
-			    <td align="right"><a class="btn-info" href="/comments/{{id}}">view</td>
 			  </tr>
 			{{/each}}
 		{{else}}

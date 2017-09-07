@@ -7,6 +7,7 @@ function eventsListeners(){
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
 	$('.view-itineraries').on("click", () => viewItineraries());
+	$('.view-comments').on("click", () => viewComments());
 	$('.add-comment').on("click", () => addComment());
 
 	//event form page
@@ -119,10 +120,14 @@ function loadItineraries(data){
 	var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data});
 	$(".itineraries").html(itinerariesHTML);
 }
-//redirect to the add itinerary page
+//redirect to the view itineraries page
 function viewItineraries(){
 	let event_id = parseInt($(".js-next").attr("data-id"));
 	window.location.href = `/events/${event_id}/itineraries`;
+}
+function viewComments(){
+	let event_id = parseInt($(".js-next").attr("data-id"));
+	window.location.href = `/events/${event_id}/comments`;
 }
 // comments section for Event show page
 

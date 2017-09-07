@@ -1,11 +1,11 @@
 
-<tr class="info">
+<tr class="primary">
 	<td><%= comment.note %> @ <%= comment.user.email %></td>
-	<td><%= button_to "View", comment_path(comment), :method => "get" %></td>
+	<td><%= button_to "View", comment_path(comment), :method => "get", :class => "btn btn-primary btn-xs" %></td>
 	<% if comment.user == current_user %>
-		<td><%= button_to "Edit", edit_comment_path(comment), :method => "get" %></td>
+		<td><%= button_to "Edit", edit_comment_path(comment), :method => "get", :class => "btn btn-primary btn-xs" %></td>
 
-		<td><%= button_to "Delete", comment, :method => "delete" %></td>
+		<td><%= button_to "Delete", comment, :method => "delete", :class => "btn btn-primary btn-xs" %></td>
 	<% else %>
 	<!-- to force the format of each row to be the same -->
 		<td></td>
