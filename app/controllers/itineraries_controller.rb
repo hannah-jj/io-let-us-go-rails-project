@@ -1,6 +1,6 @@
 class ItinerariesController < ApplicationController
-	before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
-	before_action :user_only, only: [:edit, :new, :update, :create, :destroy]
+	before_action :set_itinerary, only: [:show, :edit, :update, :destroy, :delete]
+	before_action :user_only, only: [:edit, :new, :delete, :update, :create, :destroy]
 	def index
 		
 		if params[:event_id]
@@ -69,6 +69,10 @@ class ItinerariesController < ApplicationController
 			@event = @itinerary.event
 			render :edit
 		end
+	end
+
+	def delete
+		@event = @itinerary.event
 	end
 
 	def destroy

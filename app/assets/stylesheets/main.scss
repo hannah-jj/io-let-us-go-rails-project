@@ -404,21 +404,6 @@ img.highlight {
     padding: 15px 30px;
 }
 
-.actionbutton {
-  position: relative;
-  background: $theme-primary;
-  width: 50px;
-  height: 50px;
-  font-size: 4em;
-  font-weight: 400;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 8px #202020;
-}
-
 // timeline
 .timeline {
   
@@ -432,7 +417,7 @@ img.highlight {
       content: ' ';
       height: 100%;
       width: 1px;
-      background-color: $light-grey;
+      background-color: $theme-dark;
       position: absolute;
       top: 0;
       left: 8em;
@@ -444,6 +429,22 @@ img.highlight {
     display: inline-block;
     margin: 1em 0;
     vertical-align: top;
+  }
+
+  li.itinerary {
+    &:hover{
+        background: rgba($theme-primary, 0.1);
+
+        div:first-child {
+            border: 3px solid $purple;
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+  }
+
+  .actions {
+    horizontal-align: right;
   }
   
   .bullet {
@@ -463,6 +464,7 @@ img.highlight {
       border: 2px solid $purple;
       margin-left: 5.5em;
     }
+
   }
     
     .dateline {
@@ -471,13 +473,13 @@ img.highlight {
   }
   
   .time {
-    width: 20%;
+    width: 15%;
     font-size: 0.9em;
     padding-top: 0.25em;
   }
     
   .desc {
-    width: 50%;
+    width: 30%;
   }
   
   h3 {

@@ -6,13 +6,15 @@
 <li>
 		
 <% dateline[:data].each do |itinerary| %>
-	<li>
+	<li class="itinerary">
 	<div class="bullet secondary"></div>
 	<div class="time"><%= itinerary[:meet_time] %></div>
 	<div class="desc">
 		<h3><%= itinerary[:note] %></h3>
 		<h4>@<%= itinerary[:location] %></h4>
 	</div>
+	<div class="actions"><%= button_to "Edit", edit_itinerary_path(itinerary), :method => "get", :class =>"btn btn-xs btn-primary"%>
+		<%= link_to "Delete", itinerary_path(itinerary), :confirm => "Are you sure?", :method => "delete", :class =>"btn btn-xs btn-primary"%></div>
 	</li>
 <% end %>
 	

@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   resources :comments
 
   resources :events do
-    resources :itineraries, only: [:show, :index, :edit, :new]
-    resources :comments, only: [:show, :index, :edit, :new]
+    resources :itineraries, only: [:show, :index, :edit, :new, :delete]
+    resources :comments, only: [:show, :index, :edit, :new, :delete]
     collection do
       get :popular
     end

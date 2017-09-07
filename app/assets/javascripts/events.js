@@ -6,7 +6,7 @@ function eventsListeners(){
 
 	//below functions for various functions on event/show page
   	$('.js-next').on("click", () => nextEvent());
-	$('.add-itinerary').on("click", () => addItinerary());
+	$('.view-itineraries').on("click", () => viewItineraries());
 	$('.add-comment').on("click", () => addComment());
 
 	//event form page
@@ -53,7 +53,7 @@ function nextEvent(){
 		displayEvent(data, nextId);
 		//clear itineraries and comments from previous event
 			loadItineraries(data.data.attributes.itineraries);
-			loadComments();
+			loadComments(data.data.attributes.comments);
 
 	}).fail(function(){
 		$(".js-next").attr("data-id", nextId); //advance button's id# by 1
@@ -120,9 +120,9 @@ function loadItineraries(data){
 	$(".itineraries").html(itinerariesHTML);
 }
 //redirect to the add itinerary page
-function addItinerary(){
+function viewItineraries(){
 	let event_id = parseInt($(".js-next").attr("data-id"));
-	window.location.href = `/events/${event_id}/itineraries/new`;
+	window.location.href = `/events/${event_id}/itineraries`;
 }
 // comments section for Event show page
 
