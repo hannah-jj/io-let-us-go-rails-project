@@ -4,10 +4,15 @@
 
  This web application organizes meeting information for users.  A guest user can view all the events with associated comments and itineraries.  A registered user can organize events, post comments and add/edit itineraries. User can create login or sign in using facebook credentials.
 
+ deployed to https://let-us-go.herokuapp.com/
+
 ## Usage
 
+```
 $ bundle install
+
 $ rails s
+```
 
 open localhost:3000 on browser
 

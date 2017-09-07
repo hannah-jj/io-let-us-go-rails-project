@@ -1,14 +1,0 @@
-{:uriI"Úfile:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/comments.hbs?type=text/x-handlebars-template&id=f38ff705484d834cae5577b0713ae3e825646fc05cf6df9b1a4649b3a9bac012:ET:load_pathI"app/assets/javascripts;T:filenameI"2app/assets/javascripts/templates/comments.hbs;T:	nameI"templates/comments;T:logical_pathI"templates/comments.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"Ê
-{{#each comments}}
-  <tr class="info">
-    <td>{{attributes.note}}</td>
-    <td>{{attributes.email}}</td>
-    <td><button class="view-comment" comment-id="{{id}}">View</button></td>
-  </tr>
-{{/each}}
-
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"}file-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/comments.hbs;TTF:charsetI"
-utf-8;F:digest"%Ð", ¢j`ÂïÛ1b“+fµýEs=$F'½q8Ké:lengthiÊ:dependencies_digest"%Í£1éjPéY×ìIGh=Øþí&íòœ%o9’'ØWÊ‚:idI"Ef38ff705484d834cae5577b0713ae3e825646fc05cf6df9b1a4649b3a9bac012;F:
-mtimel+¯fY

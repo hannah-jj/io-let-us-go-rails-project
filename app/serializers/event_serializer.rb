@@ -19,20 +19,17 @@ class EventSerializer < ActiveModel::Serializer
 
   def comments
     object.comments.map do |c|
-      {email: c.user.email, 
-        note: c.note
+      {
+        id: c.id,
+        email: c.user.email, 
+        note: c.note,
+        created_at: c.created_at.strftime('%m/%d/%Y, %I:%M%p')
       }
     end
   end
 
   def itineraries
-        object.itineraries.map do |i|
-      {note: i.note, 
-        location: i.location,
-        day: i.meet_day.strftime("%A, %d %b %Y"),
-        time: i.meet_time.strftime("%l:%M %p")
-      }
-    end
+      object.compileTimeLine(object.itineraries)
   end
 
 

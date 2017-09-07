@@ -1,0 +1,23 @@
+{:uriI"Úfile:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/comments.hbs?type=text/x-handlebars-template&id=9f6fd59faadb0396e7e11de88e3b54de78dafbcd9c29a1468a83e4ea0f240a4b:ET:load_pathI"app/assets/javascripts;T:filenameI"2app/assets/javascripts/templates/comments.hbs;T:	nameI"templates/comments;T:logical_pathI"templates/comments.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"ª<table class="table table-striped table-hover">
+	<tbody class="comments-table">
+		{{#if comments}}
+			{{#each comments}}
+			  <tr class="info">
+			    <td>{{note}}</td>
+			    <td>{{email}}</td>
+			    <td>{{created-at}}</td>
+			    <td align="right"><a class="btn-info" href="/comments/{{id}}">view</td>
+			  </tr>
+			{{/each}}
+		{{else}}
+			<tr class="no-comment"><td>no comments yet</td></tr>
+		{{/if}}
+	</tbody>
+</table>
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"}file-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/comments.hbs;TTF:charsetI"
+utf-8;F:digest"%iMÙ‰
+¼+ÏNàò	ÑŸå!èŠì_è64.‘9¹N}:lengthiª:dependencies_digest"%3œÕv,-eF¢ÂÊD™là(ğğF‰ÿ‘øÌNìÑ½òá:idI"E9f6fd59faadb0396e7e11de88e3b54de78dafbcd9c29a1468a83e4ea0f240a4b;F:
+mtimel+°Y

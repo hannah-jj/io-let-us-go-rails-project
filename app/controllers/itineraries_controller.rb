@@ -1,6 +1,6 @@
 class ItinerariesController < ApplicationController
-	before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
-	before_action :user_only, only: [:edit, :new, :update, :create, :destroy]
+	before_action :set_itinerary, only: [:show, :edit, :update, :destroy, :delete]
+	before_action :user_only, only: [:edit, :new, :delete, :update, :create, :destroy]
 	def index
 		
 		if params[:event_id]
@@ -8,8 +8,7 @@ class ItinerariesController < ApplicationController
 			if @event == nil
 				redirect_to events_path, :alert => "Event not found"
 			else
-				@itineraries = @event.itineraries.sort_by {|i| [i.meet_day, i.meet_time.strftime('%H:%M')]}
-				
+				@itineraries = @event.compileTimeLine(@event.itineraries)
 			end
 		else
 			redirect_to events_path, :alert => "Access Denied"
@@ -33,10 +32,8 @@ class ItinerariesController < ApplicationController
 			@itinerary = Itinerary.find(params[:id])
 			@event = @itinerary.event
 		end
-		respond_to do |f|
-	      f.html { render :show }
-	      f.json { render json: @itinerary }
-	    end
+	    render json: @itinerary
+	   
 	end
 
 	def new
@@ -72,6 +69,10 @@ class ItinerariesController < ApplicationController
 			@event = @itinerary.event
 			render :edit
 		end
+	end
+
+	def delete
+		@event = @itinerary.event
 	end
 
 	def destroy
