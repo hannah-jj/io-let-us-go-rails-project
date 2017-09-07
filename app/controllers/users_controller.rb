@@ -20,7 +20,11 @@ class UsersController < ApplicationController
 	end
 
 	def upcoming
-		@itineraries = @user.upcoming_itineraries
+		@itineraries = @user.compileTimeLine(@user.upcoming_itineraries)
+		respond_to do |f|
+	      f.html { render :upcoming }
+	      f.json { render json: @itineraries }
+	    end
 	end
 
 	private

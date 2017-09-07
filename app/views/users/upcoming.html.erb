@@ -1,7 +1,12 @@
-
-
-<legend>Upcoming itineraries for events that you have noted going/maybe: </legend>
-<% @itineraries.each do |itinerary| %>
-	<p>Event : <%= itinerary.event.title %></p>
-	<%= render partial: 'itineraries/detail', locals: {itinerary: itinerary } %>
-<% end %>
+<section class="no-padding">
+    <div class="container">
+		<legend>Upcoming itineraries for events that you have noted going/maybe: </legend>
+		<div class="timeline">
+			<ul>
+				<% @itineraries.each do |itinerary| %>
+					<%= render partial: 'itineraries/detail', locals: {dateline: itinerary } %>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</section>

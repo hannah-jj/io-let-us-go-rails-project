@@ -12,7 +12,8 @@ class ApplicationRecord < ActiveRecord::Base
   	result = []
   	dateHash = {date: "", data: []}
   	for i in 0...sortedArray.length do
-      data = {"id": sortedArray[i].id,
+      data = {"event_id": sortedArray[i].event.id,
+              "id": sortedArray[i].id,
               "note": sortedArray[i].note,
               "location": sortedArray[i].location,
               "meet_time": sortedArray[i].meet_time.to_time.strftime('%I:%M%p'),
