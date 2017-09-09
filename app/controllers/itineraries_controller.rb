@@ -51,7 +51,7 @@ class ItinerariesController < ApplicationController
 	def create
 		@itinerary = Itinerary.new(itinerary_params)
 		if @itinerary.save
-			redirect_to event_path(@itinerary.event), notice: "Itinerary successfully created"
+			redirect_to event_itineraries_path(@itinerary.event), notice: "Itinerary successfully created"
 		else
 			@event = @itinerary.event
 			render :new
@@ -64,7 +64,7 @@ class ItinerariesController < ApplicationController
 
 	def update
 		if @itinerary.update(itinerary_params)
-			redirect_to event_path(@itinerary.event), notice: "Itinerary successfully updated"
+			redirect_to event_itineraries_path(@itinerary.event), notice: "Itinerary successfully updated"
 		else
 			@event = @itinerary.event
 			render :edit
@@ -77,7 +77,7 @@ class ItinerariesController < ApplicationController
 
 	def destroy
 		Itinerary.delete(@itinerary)
-		redirect_to event_path(@itinerary.event), notice: "itinerary deleted"
+		redirect_to event_itineraries_path(@itinerary.event), notice: "itinerary deleted"
 	end
 
 	private
