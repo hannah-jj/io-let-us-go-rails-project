@@ -9,8 +9,6 @@ function eventsListeners(){
 	$('.view-itineraries').on("click", () => viewItineraries());
 	$('.view-comments').on("click", () => viewComments());
 	$('.add-comment').on("click", () => addComment());
-
-	//event form page
 	$('.event-images').click(function(e){
 		changeSelect(e);
 	}); 
@@ -24,16 +22,15 @@ function showEvents(id){
 			$(".events-table").html(eventsHTML);
 		});	
 	}
-	else if ($(".main-page").attr("event") == "main") {
-
-	} 
-	else {
+	else if ($('.event-title').attr('event') == "single"){
 		$.get("/events/"+id+".json", function(data){ 
 			displayEvent(data, id);
 			loadItineraries(data.data.attributes.itineraries);
 			loadComments(data.data.attributes.comments);
 		});	
 	}
+
+	else {}
 }
 
 //when nextEvent button is clicked

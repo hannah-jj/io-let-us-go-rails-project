@@ -1,9 +1,5 @@
 <section class="no-padding">
     <div class="container">
-		<p><%= link_to "Back To The Event ", event_path(@event) %>|
-			<%= link_to " Add Itinerary", new_event_itinerary_path(@event, @itinerary) %>
-		</p>
-
 		<legend>Event: <%= @event.title %></legend>
 		<h4> Itineraries </h4>
 
@@ -14,5 +10,7 @@
 				<% end %>
 			</ul>
 		</div>
+		<%= link_to "Back To The Event ", event_path(@event), :class =>"btn btn-primary btn-xs" %>
+		<%= link_to " Add Itinerary", new_event_itinerary_path(@event, @itinerary), :class =>"btn btn-primary btn-xs"%>
 	</div>
 </section>
