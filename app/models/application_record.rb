@@ -17,6 +17,7 @@ class ApplicationRecord < ActiveRecord::Base
               "note": sortedArray[i].note,
               "location": sortedArray[i].location,
               "meet_time": sortedArray[i].meet_time.to_time.strftime('%I:%M%p'),
+              "end_time": sortedArray[i].end_time.to_time.strftime('%I:%M%p')
       }
       
   		if i == 0 || result[-1][:date] != sortedArray[i].meet_day

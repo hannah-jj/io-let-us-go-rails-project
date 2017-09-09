@@ -1,5 +1,5 @@
 class ItinerarySerializer < ActiveModel::Serializer
-  attributes :id, :note, :location, :time, :event_id, :meet_day, :meet_time
+  attributes :id, :note, :location, :time, :event_id, :meet_day, :meet_time, :end_time
 
   def event_id
   	object.event.id
@@ -15,5 +15,9 @@ class ItinerarySerializer < ActiveModel::Serializer
 
   def meet_time
   	object.meet_time.strftime("%l:%M %p")
+  end
+
+  def end_time
+    object.end_time.strftime("%l:%M %p")
   end
 end

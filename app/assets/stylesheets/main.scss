@@ -470,27 +470,23 @@ img.highlight {
 
   }
     
-    .dateline {
+  .dateline {
     font-size: 1.0em;
     padding-top: 0.25em;
+    font-weight: 500;
   }
   
   .time {
-    width: 15%;
-    font-size: 0.9em;
-    padding-top: 0.25em;
-  }
-    
-  .desc {
-    width: 30%;
-  }
-  
-  h3 {
+    width: 50%;
     font-size: 1.0em;
-    font-weight: 400;
-    margin: 0;
   }
-  
+
+    h3 {
+    margin: 0;
+    font-size: 1.0em;
+    font-weight: 500;
+  }
+
   h4 {
     margin: 0;
     font-size: 0.8em;

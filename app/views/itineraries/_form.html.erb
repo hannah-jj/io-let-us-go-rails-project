@@ -22,7 +22,10 @@
       <%= f.date_select :meet_day, :min => Date.today.year%></div>
 
       <div class="field"> <%= f.label :meet_time %><br>
-      <%= f.time_select :meet_time, :min => Date.today.year%></div>
+      <%= f.time_select :meet_time%></div>
+
+      <div class="field"> <%= f.label :end_time %><br>
+      <%= f.time_select :end_time%></div>
 
 
       <div class="actions">

@@ -90,6 +90,7 @@ class ItinerariesController < ApplicationController
 	    :note,
 	    :location,
 	    :meet_time,
+	    :end_time,
 	    :meet_day
 	  	)
     end
