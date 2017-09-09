@@ -1,0 +1,31 @@
+{:uriI"Øfile:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/events.hbs?type=text/x-handlebars-template&id=bbaeff59d1e5bb95e2fd7c7b91d032b5b799b4886b46526e553f9b07831bd9aa:ET:load_pathI"app/assets/javascripts;T:filenameI"0app/assets/javascripts/templates/events.hbs;T:	nameI"templates/events;T:logical_pathI"templates/events.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"6{{#if events}}
+	{{#each events}}
+	  <div class="col-lg-4 col-sm-6">
+	  	<h3>{{attributes.title}}</h3>
+	  	<div class="portfolio-box" onClick="return true">
+            <img src="https://s3.us-east-2.amazonaws.com/let-us-go/events/{{attributes.image}}.jpg" class="img-responsive" alt="event picture">
+            <div class="portfolio-box-caption">
+            	<div class="portfolio-box-caption-content">
+            		<div class="project-name">
+						<h2>Note: {{attributes.note}}</h2>
+						<h3>Organized by: {{attributes.organizer.email}}</h3>
+						{{#if attributes.going}}
+							Are you going? {{attributes.going}}
+						{{/if}}
+					</div>
+					<a href="/events/{{id}}" class="btn btn-primary btn-lg">View</a>
+				</div>
+			</div>		
+		</div>
+	   </div>
+	{{/each}}
+{{else}}
+	<div><p>no event yet</p></div>
+{{/if}}
+
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"{file-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/events.hbs;TTF:charsetI"
+utf-8;F:digest"%Æ7WÛ¯ÆÍB—éƒiÊfbi€ƒĞ¹Ï@(o±mÏ:lengthi6:dependencies_digest"%+°ªÇ£…Â~¦«ËŸò:…HZ‡Í‚×?x›:idI"Ebbaeff59d1e5bb95e2fd7c7b91d032b5b799b4886b46526e553f9b07831bd9aa;F:
+mtimel+~q³Y

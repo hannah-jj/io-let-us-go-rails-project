@@ -16912,13 +16912,13 @@ return /******/ (function(modules) { // webpackBootstrap
     + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.going : stack1),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "					</div>\n					<a href=\"/events/"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"btn btn-primary btn-small\">View</a>\n				</div>\n			</div>		\n		</div>\n	   </div>\n";
+    + "\" class=\"btn btn-primary btn-lg\">View</a>\n				</div>\n			</div>		\n		</div>\n	   </div>\n";
 },"3":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "							<span class=\"btn btn-primary btn-small\">"
+  return "							Are you going? "
     + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.going : stack1), depth0))
-    + "</span>\n";
+    + "\n";
 },"5":function(container,depth0,helpers,partials,data) {
     return "	<div><p>no event yet</p></div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
