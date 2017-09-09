@@ -1,0 +1,26 @@
+<div class="timeline">
+	<ul>
+		{{#if itineraries}}
+			{{#each itineraries}}
+			<li>
+				<div class="dateline">{{date}}</div>
+				<div class="bullet primary"></div>
+			<li>
+			  {{#each data}}
+			  	<li>
+					<div class="bullet secondary"></div>
+					<div class="time">
+						{{meet-time}} - {{end-time}}
+						<h3>{{note}}</h3>
+						<h4>@ {{location}}</h4>
+					</div>
+					</li>
+			  {{/each}}
+			{{/each}}
+		{{else}}
+			no itineraries yet
+		{{/if}}
+	</ul>
+</div>
+
+

@@ -1,0 +1,31 @@
+{:uriI"›file:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/itineraries.hbs?type=text/x-handlebars-template&id=fc8208b2214b4d6759221f31e6868d9b25bc54199720d76e74ea5b1b63c924d4:ET:load_pathI"app/assets/javascripts;T:filenameI"5app/assets/javascripts/templates/itineraries.hbs;T:	nameI"templates/itineraries;T:logical_pathI"templates/itineraries.hbs;T:content_typeI"text/x-handlebars-template;T:sourceI"‘<div class="timeline">
+	<ul>
+		{{#if itineraries}}
+			{{#each itineraries}}
+			<li>
+				<div class="dateline">{{date}}</div>
+				<div class="bullet primary"></div>
+			<li>
+			  {{#each data}}
+			  	<li>
+					<div class="bullet secondary"></div>
+					<div class="time">
+						{{meet-time}} - {{end-time}}
+						<h3>{{note}}</h3>
+						<h4>@ {{location}}</h4>
+					</div>
+					</li>
+			  {{/each}}
+			{{/each}}
+		{{else}}
+			no itineraries yet
+		{{/if}}
+	</ul>
+</div>
+
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Tprocessors:type=text/x-handlebars-template&file_type=text/x-handlebars-template;TTI"Äfile-digest:///Users/huijiang/Desktop/Ruby%20Sandbox/io-let-us-go-rails-project/app/assets/javascripts/templates/itineraries.hbs;TTF:charsetI"
+utf-8;F:digest"%ì‡åcWΩ!®/÷aŸÀ8_îTº⁄/BàÇÏÏCf}:lengthi‘:dependencies_digest"%ˆ€Gë ô~¶4>‡]Á~mÿ–W∏$Â^[Mäj_V-Y:idI"Efc8208b2214b4d6759221f31e6868d9b25bc54199720d76e74ea5b1b63c924d4;F:
+mtimel+6Q≥Y
